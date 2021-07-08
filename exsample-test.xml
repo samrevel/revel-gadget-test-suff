@@ -1,57 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module> 
-<ModulePrefs title="Trevor Does Tricks" height="300">
-  <Require feature="flash" />
-  <Require feature="reveldigital" />
-  <Require feature="jquery" />
-  <Require feature="webfont" />
-  <Require feature="moment" />
-  <Require feature="offline" />
+<ModulePrefs title="RevelDigital Google Spreadsheet Gadget" description="Basic tabular display of Google spreadsheet data" author="RevelDigital" background="transparent">
+  <UserPref name="feedUrl" display_name="RSS feed URL" datatype="string" />
+  <UserPref name="hasTitle" display_name="Display the feed title"  datatype="bool" default_value="true" />
+  <UserPref name="header-style" display_name="Header Style" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;" required="true" />
+  <UserPref name="body-style" display_name="Body Style" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:18px;" required="true" />
+  <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
+  <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />
+  <UserPref name="rotation" display_name="Rotate" datatype="string" default_value="0" />
 </ModulePrefs>
 <Content type="html">
 <![CDATA[
 <style type="text/css">
-  input.mybutton
-  {
-     background-color:#FFCC99;
-     border-style:solid;
-     border-color:#000000;
-     font-family:Comic Sans MS,sans-serif;
-     font-size:14px;
-  }
+body *
+{
+  line-height: 1.2em; 
+  letter-spacing: 0; 
+  word-spacing: normal; 
+}
+body
+{
+  background: transparent;
+}
+.rssFeed
+{
+	__UP_body-style__;
+	width: __UP_rdW__px;
+	height: __UP_rdH__px;
+	overflow: hidden;
+}
+.rssFeed a
+{
+	color: #820024;
+	text-decoration: none;
+}
+.rssFeed a:hover
+{
+	color: #000;
+	text-decoration: underline;
+}
+.rssHeader
+{
+  __UP_header-style__;
+}
+.rssBody
+{
+  border: 0px solid #fff;
+  height: __UP_rdH__px;
+}
+.rssRow h4, .rssRow p, .rssRow div
+{
+	margin: 0;
+	width: __UP_rdW__px;
+}
+#ticker {
+  transform: rotate(__UP_rotation__deg);
+  transform-origin: 50% 50%;	
+}
+#ticker1 .odd { background-color: #fff; }
+#ticker1 .even { background-color: #fff; }
+#ticker2 .odd { background-color: #fff; }
+#ticker2 .even { background-color: #fff; }
 </style>
-<div id="flashcontainer" style="text-align: center;"></div> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://reveldigital.github.io/reveldigital-gadgets/third-party/jquery.vticker.js"></script>
+<script type="text/javascript" src="https://reveldigital.github.io/reveldigital-gadgets/third-party/jquery.zrssfeed.js"></script>
+<div id="ticker">
+</div>
 <script type="text/javascript">
-  // Display still photo.
-  function showPhoto() {
-  
-    console.log("moment: " + moment().format('LLL'));
-    
-    document.getElementById("flashcontainer").innerHTML = "<img src='http://doc.examples.googlepages.com/Trevor.JPG' />";
+  var prefs = new gadgets.Prefs();
+  function load() {    
+    $("#ticker").rssfeed(prefs.getString("feedUrl")).ajaxStop(function() {
+      $('#ticker div.rssBody').vTicker({ showItems: 1});
+    });
   }
-  // Play .swf file for specified trick.
-  function doTrick(trick) {
-    // The URL for the .swf file that shows the specified trick.
-    var url = "http://doc.examples.googlepages.com/Trevor-"+trick+".swf";
-    // Play .swf file.
-      gadgets.flash.embedFlash(url, "flashcontainer", {
-      swf_version: 6,
-      id: "flashid",
-      width: 300,
-      height: 250
-    })
-  }
-  // When gadget first loads, display still photo.
-  gadgets.util.registerOnLoadHandler(showPhoto);
-  </script>
-  <br />
-  <div style="text-align: center;"> 
-    <input type=submit class="mybutton" value="Spin" onClick="doTrick('spin')">
-    <input type=submit class="mybutton" value="Speak" onClick="doTrick('speak')">
-    <input type=submit class="mybutton" value="Sit" onClick="doTrick('sit')">
-    <input type=submit class="mybutton" value="Down" onClick="doTrick('down')">
-    <input type=submit class="mybutton" value="Stop" onClick="showPhoto()">
-  </div>
-  ]]>
+  gadgets.util.registerOnLoadHandler(load);
+</script>
+]]>
 </Content>
 </Module>
