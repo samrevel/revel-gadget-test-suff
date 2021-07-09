@@ -60,6 +60,26 @@
     <div id="answer"></div>
 
 <script type="text/javascript">
+    function calculator() {
+        var answer = document.querySelector('#answer');
+        var select = document.querySelector('select');
+        var num1 = Number(document.querySelector('#num1').value);
+        var num2 = Number(document.querySelector('#num2').value);
+        var opr =(select.options[select.selectedIndex].value);
+        if(opr == 'add'){
+        answer.innerHTML = num1 + num2;
+        }
+        if(opr == 'minus'){
+            answer.innerHTML = num1 - num2;
+            }
+        if(opr == 'divide'){
+            answer.innerHTML = num1 / num2;
+                    }             
+        if(opr == 'multiply'){
+            answer.innerHTML = num1 * num2;
+            } 
+                        
+    } 
 
   var prefs = new gadgets.Prefs();
 
@@ -67,7 +87,7 @@
   function onLoad() {
 
     <!-- Preferences can be accessed at runtime like so -->
-    alert(prefs.getString('myStringPref'));
+
   }
 
   gadgets.util.registerOnLoadHandler(onLoad);
