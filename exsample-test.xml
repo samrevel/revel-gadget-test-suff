@@ -42,8 +42,8 @@
 </style>
 
 <!-- Preferences can be inlined in your HTML like so -->
-<div class="my-style">
-    <form>
+
+    <form class="my-style">
 
         <input type="number" id="num1"/>
         <select>
@@ -57,8 +57,7 @@
         <button type="button" onclick="calculator();";>Calculate</button>
     </form>
 
-    <div id="answer"></div>
-</div>
+    <div id="answer"  class="my-style"></div>
 
 <script type="text/javascript">
     function calculator() {
