@@ -45,19 +45,19 @@
 
     <form class="my-style">
 
-        <input type="number" id="num1"/>
-        <select>
+        <input type="number" id="num1"  class="my-style"/>
+        <select  class="my-style">
             <option value="add">Plus</option>
             <option value="minus">Minus</option>
             <option value="divide">Divided By</option>
             <option value="multiply">Multiply By</option>
         </select>
-        <input type="number" id="num2"/>
+        <input type="number" id="num2"  class="my-style"/>
 
-        <button type="button" onclick="calculator();";>Calculate</button>
+        <button type="button" onclick="calculator();"  class="my-style";>Calculate</button>
     </form>
 
-    <div id="answer"  class="my-style"></div>
+    <div id="answer" class="my-style"></div>
 
 <script type="text/javascript">
     function calculator() {
