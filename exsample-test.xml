@@ -42,7 +42,7 @@
 </style>
 
 <!-- Preferences can be inlined in your HTML like so -->
-<div>
+<div class="my-style">
     <form>
 
         <input type="number" id="num1"/>
