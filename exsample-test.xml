@@ -42,7 +42,6 @@
 </style>
 
 <!-- Preferences can be inlined in your HTML like so -->
-<div class="my-style" id="container">__UP_myStringPref__</div> 
     <form class="my-style">
 
         <input type="number" id="num1" class="my-style" />
