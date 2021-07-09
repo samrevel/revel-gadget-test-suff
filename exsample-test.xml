@@ -43,6 +43,21 @@
 
 <!-- Preferences can be inlined in your HTML like so -->
 <div class="my-style" id="container">__UP_myStringPref__</div> 
+    <form>
+
+        <input type="number" id="num1" />
+        <select>
+            <option value="add">Plus</option>
+            <option value="minus">Minus</option>
+            <option value="divide">Divided By</option>
+            <option value="multiply">Multiply By</option>
+        </select>
+        <input type="number" id="num2" />
+
+        <button type="button" onclick="calculator();";>Calculate</button>
+    </form>
+
+    <div id="answer"></div>
 
 <script type="text/javascript">
 
