@@ -49,12 +49,10 @@ div#container
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
 
-  function pageScroll() {
-    window.scrollBy(0,1);
-    scrolldelay = setTimeout(pageScroll,10);
-    }
+
   function load() {
-    pageScroll()
+	window.scrollBy(0,1);
+    scrolldelay = setTimeout(pageScroll,10);
     if(prefs.getBool("portrait"))
     {
       $("body").css("flex-direction", "row");
