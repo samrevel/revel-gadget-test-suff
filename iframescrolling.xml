@@ -48,11 +48,18 @@ div#container
 
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
-
+      
+  function scrollToBottom(){
+    bottom = document.body.scrollHeight;
+    current = window.innerHeight+ document.body.scrollTop;
+      if((bottom-current) >0){
+        window.scrollTo(0, bottom);
+        setTimeout ( 'scrollToBottom()', 1000 );
+      }
+    };
 
   function load() {
-	window.scrollBy(0,1);
-    scrolldelay = setTimeout(pageScroll,10);
+    scrollToBottom();
     if(prefs.getBool("portrait"))
     {
       $("body").css("flex-direction", "row");
