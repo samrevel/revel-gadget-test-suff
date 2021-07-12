@@ -47,28 +47,14 @@ div#container
 </div>
 
 <script type="text/javascript">
+  $(document).ready(function(){
+     $('body,html').animate({scrollTop: 1000}, 8000); 
+     alert(prefs.getString('myStringPref'));
+     document() 
+});
+document() 
   var prefs = new gadgets.Prefs();
-  
-   scrollToBottom();  
-
-      
-  function scrollToBottom(){
-    bottom = document.body.scrollHeight;
-    current = window.innerHeight+ document.body.scrollTop;
-      if((bottom-current) >0){
-        window.scrollTo(0, bottom);
-        setTimeout ( 'scrollToBottom()', 1000 );
-      }
-    };
-
   function load() {
-    scrollToBottom();
-
-
-
-
-
-
     if(prefs.getBool("portrait"))
     {
       $("body").css("flex-direction", "row");
