@@ -50,7 +50,7 @@ div#container
   var prefs = new gadgets.Prefs();
 var x = 1
 function pageScroll() {
-	for (let i = 0; i < 500; i++){
+	for (let i = 0; i < 50; i++){
     	window.scrollBy(0,50); // horizontal and vertical scroll increments
     	scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
 }
