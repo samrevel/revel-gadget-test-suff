@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
-<Module> 
-<ModulePrefs title="Iframe Gadget" description="Basic gadget for displaying iframes" author="RevelDigital - Vincent C." background="transparent">
-  <Require feature="reveldigital" />
-  <Require feature="jquery" />
-  <Require feature="webfont" />
-  
-  <UserPref name="text" display_name="IFrame Source Link" datatype="string" default_value="https://webplayer.reveldigital.com/" />
-  <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
-  <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />
-  <UserPref name="portrait" display_name="Portrait Mode" default_value="false" datatype="bool" />
-  
-</ModulePrefs>
-<Content type="html">
-<![CDATA[
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs title="Iframe Gadget" description="Basic gadget for displaying iframes" author="RevelDigital - Vincent C." background="transparent">
+		<Require feature="reveldigital" />
+		<Require feature="jquery" />
+		<Require feature="webfont" />
+		<UserPref name="text" display_name="IFrame Source Link" datatype="string" default_value="https://reveldigital.com/" />
+        
+		<UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
+		<UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />
+		<UserPref name="portrait" display_name="Portrait Mode" default_value="false" datatype="bool" />
+	</ModulePrefs>
+	<Content type="html">
+		<![CDATA[
 <style type="text/css">
 body *
 {
@@ -37,17 +36,25 @@ div#container
   line-height: __UP_lineHeight__;
 }
 </style>
+
+
 <div id="container">
-    <iframe id="inlineFrameExample"
-	    title="Inline Frame Example"
-	    width="__UP_rdW__"
-	    height="__UP_rdH__"
-	    src="__UP_text__">
+    <iframe id="inlineFrameExample" 
+        title="Inline Frame Example"
+        width="__UP_rdW__" 
+        height="__UP_rdH__" src="__UP_text__">
     </iframe>
 </div>
+
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
+
+  function pageScroll() {
+    window.scrollBy(0,1);
+    scrolldelay = setTimeout(pageScroll,10);
+    }
   function load() {
+    pageScroll()
     if(prefs.getBool("portrait"))
     {
       $("body").css("flex-direction", "row");
@@ -64,5 +71,5 @@ div#container
   
 </script>
 ]]>
-</Content>
+	</Content>
 </Module>
