@@ -47,13 +47,14 @@ div#container
 </div>
 
 <script type="text/javascript">
-  $(document).ready(function(){
-     $('body,html').animate({scrollTop: 1000}, 8000); 
-     alert(prefs.getString('myStringPref'));
-     document() 
-});
-document() 
   var prefs = new gadgets.Prefs();
+  function pageScroll() {
+    	window.scrollBy(0,50); // horizontal and vertical scroll increments
+    	scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
+      alert(prefs.getString('myStringPref'));
+}
+pageScroll()
+
   function load() {
     if(prefs.getBool("portrait"))
     {
