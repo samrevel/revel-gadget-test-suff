@@ -68,6 +68,11 @@
 </div>
 
 <script type="text/javascript">
+
+  var prefs = new gadgets.Prefs();
+
+  // This function is called after the gadget has been initialized.
+  function onLoad() {
       var xhr = new XMLHttpRequest();
 
       xhr.open("GET", "https://www.thesportsdb.com/league/4391-NFL", true);
@@ -112,18 +117,6 @@
         }
       };
 
-      xhr.onerror = function () {
-        console.error(xhr.status, xhr.statusText);
-      };
-
-      xhr.send();
-  var prefs = new gadgets.Prefs();
-
-  // This function is called after the gadget has been initialized.
-  function onLoad() {
-
-    <!-- Preferences can be accessed at runtime like so -->
-    alert(prefs.getString('myStringPref'));
   }
 
   gadgets.util.registerOnLoadHandler(onLoad);
