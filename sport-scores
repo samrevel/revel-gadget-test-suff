@@ -39,20 +39,29 @@
   {
     __UP_myStylePref__;
   }
+      a:link {
+        text-decoration: none;
+      }
+      .hidden-xs {
+        visibility: collapse;
+      }
+      td a img {
+        visibility: collapse;
+      }
 </style>
 
 <!-- Preferences can be inlined in your HTML like so -->
 <div class="my-style">
 <table>
-<tr id="game9">test</tr>
-<tr id="game8">to</tr>
-<tr id="game7">see</tr>
-<tr id="game6">what</tr>
-<tr id="game5">is</tr>
-<tr id="game4">wrong</tr>
-<tr id="game3">with</tr>
-<tr id="game2">this</tr>
-<tr id="game1">gadget</tr>
+<tr id="game9"></tr>
+<tr id="game8"></tr>
+<tr id="game7"></tr>
+<tr id="game6"></tr>
+<tr id="game5"></tr>
+<tr id="game4"></tr>
+<tr id="game3"></tr>
+<tr id="game2"></tr>
+<tr id="game1"></tr>
 <tr id="game0"></tr>
 </table>
 </div>
@@ -75,7 +84,7 @@
       xhr.onload = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
           var response = xhr.responseXML.querySelectorAll(
-            '#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr'
+            "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
           );
           document.getElementById("game0").innerHTML =
             response[response.length - 1].innerHTML;
