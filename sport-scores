@@ -41,6 +41,7 @@
   }
       a:link {
         text-decoration: none;
+        __UP_myStylePref__;
       }
       .hidden-xs {
         visibility: collapse;
