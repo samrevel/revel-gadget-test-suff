@@ -71,9 +71,13 @@
 
   var prefs = new gadgets.Prefs();
 
+
+
   // This function is called after the gadget has been initialized.
   function onLoad() {
-      var xhr = new XMLHttpRequest();
+
+
+        var xhr = new XMLHttpRequest();
 
       xhr.open("GET", "https://www.thesportsdb.com/league/4391-NFL", true);
       xhr.responseType = "document";
@@ -116,6 +120,13 @@
             response[response.length - 10].innerHTML;
         }
       };
+
+      xhr.onerror = function () {
+        console.error(xhr.status, xhr.statusText);
+      };
+
+      xhr.send();
+          
 
   }
 
