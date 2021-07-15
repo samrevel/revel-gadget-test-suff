@@ -42,6 +42,8 @@
       a:link {
         text-decoration: none;
         __UP_myStylePref__;
+        pointer-events: none;
+        cursor: default;
       }
       .hidden-xs {
         visibility: collapse;
