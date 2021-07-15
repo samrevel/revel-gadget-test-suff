@@ -84,7 +84,7 @@
       xhr.onload = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
           var response = xhr.responseXML.querySelectorAll(
-            "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
+            '#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr'
           );
           document.getElementById("game0").innerHTML =
             response[response.length - 1].innerHTML;
