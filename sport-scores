@@ -39,15 +39,6 @@
   {
     __UP_myStylePref__;
   }
-      a:link {
-        text-decoration: none;
-      }
-      .hidden-xs {
-        visibility: collapse;
-      }
-      td a img {
-        visibility: collapse;
-      }
 </style>
 
 <!-- Preferences can be inlined in your HTML like so -->
