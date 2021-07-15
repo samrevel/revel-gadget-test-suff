@@ -87,8 +87,6 @@
           var response = xhr.responseXML.querySelectorAll(
             "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
           );
-          //game scores ae the last 10 rows, so you have to pop all but last 10
-
           document.getElementById("game0").innerHTML =
             response[response.length - 1].innerHTML;
 
@@ -126,7 +124,7 @@
       };
 
       xhr.send();
-          
+
 
   }
 
