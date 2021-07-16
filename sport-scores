@@ -61,7 +61,7 @@
 <div class="my-style">
 <table>
 <!--NFL GAMEs-->
-<h2 class="NFL">NFL Game Scores</h2>
+<th class="NFL" class="gameHeader">NFL Game Scores</th>
 <tr class="NFL" class="game1"></tr>
 <tr class="NFL" class="game2"></tr>
 <tr class="NFL" class="game3"></tr>
@@ -75,7 +75,7 @@
 <tr class="NFL"></tr>
 
 <!--NBA GAMES-->
-<h2 class="NBA">NBA Game Scores</h2>
+<th class="NBA" class="gameHeader">NBA Game Scores</th>
 <tr class="NBA" class="game1"></tr>
 <tr class="NBA" class="game2"></tr>
 <tr class="NBA" class="game3"></tr>
@@ -89,7 +89,7 @@
 <tr class="NBA"></tr>
 
 <!--MLB GAMES-->
-<h2 class="MLB">MLB Game Scores</h2>
+<th class="MLB" class="gameHeader">MLB Game Scores</th>
 <tr class="MLB" class="game1"></tr>
 <tr class="MLB" class="game2"></tr>
 <tr class="MLB" class="game3"></tr>
@@ -103,7 +103,7 @@
 <tr class="MLB"></tr>
 
 <!--NHL GAMES-->
-<h2 class="NHL">NHL Game Scores</h2>
+<th class="NHL" class="gameHeader">NHL Game Scores</th>
 <tr class="NHL" class="game1"></tr>
 <tr class="NHL" class="game2"></tr>
 <tr class="NHL" class="game3"></tr>
@@ -117,7 +117,7 @@
 <tr class="NHL"></tr>
 
 <!--MLS GAMES-->
-<h2 class="MLS">MLS Game Scores</h2>
+<th class="MLS" class="gameHeader">MLS Game Scores</th>
 <tr class="MLS" class="game1"></tr>
 <tr class="MLS" class="game2"></tr>
 <tr class="MLS" class="game3"></tr>
