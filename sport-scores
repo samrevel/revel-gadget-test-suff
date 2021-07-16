@@ -54,6 +54,7 @@
 </style>
 
 <!-- Preferences can be inlined in your HTML like so -->
+<meta http-equiv="refresh" content="60" />
 <div class="my-style">
 <table>
 <tr id="game9"></tr>
