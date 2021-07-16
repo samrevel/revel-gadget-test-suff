@@ -157,7 +157,6 @@
             var response = xhr.responseXML.querySelectorAll(
               "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
             );
-            var gameName = "MLS";
             displayGames(response);
           }
         };
