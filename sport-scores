@@ -59,76 +59,81 @@
 
 <h1></h1>
 <div class="my-style">
-<table>
-<!--NFL GAMEs-->
-<th class="NFL" class="gameHeader">NFL Game Scores</th>
-<tr class="NFL" class="game1"></tr>
-<tr class="NFL" class="game2"></tr>
-<tr class="NFL" class="game3"></tr>
-<tr class="NFL" class="game4"></tr>
-<tr class="NFL" class="game5"></tr>
-<tr class="NFL" class="game6"></tr>
-<tr class="NFL" class="game7"></tr>
-<tr class="NFL" class="game8"></tr>
-<tr class="NFL" class="game9"></tr>
-<tr class="NFL" class="game10"></tr>
-<tr class="NFL"></tr>
-
-<!--NBA GAMES-->
-<th class="NBA" class="gameHeader">NBA Game Scores</th>
-<tr class="NBA" class="game1"></tr>
-<tr class="NBA" class="game2"></tr>
-<tr class="NBA" class="game3"></tr>
-<tr class="NBA" class="game4"></tr>
-<tr class="NBA" class="game5"></tr>
-<tr class="NBA" class="game6"></tr>
-<tr class="NBA" class="game7"></tr>
-<tr class="NBA" class="game8"></tr>
-<tr class="NBA" class="game9"></tr>
-<tr class="NBA" class="game10"></tr>
-<tr class="NBA"></tr>
-
-<!--MLB GAMES-->
-<th class="MLB" class="gameHeader">MLB Game Scores</th>
-<tr class="MLB" class="game1"></tr>
-<tr class="MLB" class="game2"></tr>
-<tr class="MLB" class="game3"></tr>
-<tr class="MLB" class="game4"></tr>
-<tr class="MLB" class="game5"></tr>
-<tr class="MLB" class="game6"></tr>
-<tr class="MLB" class="game7"></tr>
-<tr class="MLB" class="game8"></tr>
-<tr class="MLB" class="game9"></tr>
-<tr class="MLB" class="game10"></tr>
-<tr class="MLB"></tr>
-
-<!--NHL GAMES-->
-<th class="NHL" class="gameHeader">NHL Game Scores</th>
-<tr class="NHL" class="game1"></tr>
-<tr class="NHL" class="game2"></tr>
-<tr class="NHL" class="game3"></tr>
-<tr class="NHL" class="game4"></tr>
-<tr class="NHL" class="game5"></tr>
-<tr class="NHL" class="game6"></tr>
-<tr class="NHL" class="game7"></tr>
-<tr class="NHL" class="game8"></tr>
-<tr class="NHL" class="game9"></tr>
-<tr class="NHL" class="game10"></tr>
-<tr class="NHL"></tr>
-
-<!--MLS GAMES-->
-<th class="MLS" class="gameHeader">MLS Game Scores</th>
-<tr class="MLS" class="game1"></tr>
-<tr class="MLS" class="game2"></tr>
-<tr class="MLS" class="game3"></tr>
-<tr class="MLS" class="game4"></tr>
-<tr class="MLS" class="game5"></tr>
-<tr class="MLS" class="game6"></tr>
-<tr class="MLS" class="game7"></tr>
-<tr class="MLS" class="game8"></tr>
-<tr class="MLS" class="game9"></tr>
-<tr class="MLS" class="game10"></tr>
-</table>
+    <table>
+      <tr></tr>
+      <!--NFL GAMEs-->
+      <th class="NFL" class="gameHeader">NFL Game Scores</th>
+      <tr class="NFL" class="game1"></tr>
+      <tr class="NFL" class="game2"></tr>
+      <tr class="NFL" class="game3"></tr>
+      <tr class="NFL" class="game4"></tr>
+      <tr class="NFL" class="game5"></tr>
+      <tr class="NFL" class="game6"></tr>
+      <tr class="NFL" class="game7"></tr>
+      <tr class="NFL" class="game8"></tr>
+      <tr class="NFL" class="game9"></tr>
+      <tr class="NFL" class="game10"></tr>
+      <tr class="NFL"></tr>
+    </table>
+    <!--NBA GAMES-->
+    <table>
+      <th class="NBA" class="gameHeader">NBA Game Scores</th>
+      <tr class="NBA" class="game1"></tr>
+      <tr class="NBA" class="game2"></tr>
+      <tr class="NBA" class="game3"></tr>
+      <tr class="NBA" class="game4"></tr>
+      <tr class="NBA" class="game5"></tr>
+      <tr class="NBA" class="game6"></tr>
+      <tr class="NBA" class="game7"></tr>
+      <tr class="NBA" class="game8"></tr>
+      <tr class="NBA" class="game9"></tr>
+      <tr class="NBA" class="game10"></tr>
+      <tr class="NBA"></tr>
+    </table>
+    <table>
+      <!--MLB GAMES-->
+      <th class="MLB" class="gameHeader">MLB Game Scores</th>
+      <tr class="MLB" class="game1"></tr>
+      <tr class="MLB" class="game2"></tr>
+      <tr class="MLB" class="game3"></tr>
+      <tr class="MLB" class="game4"></tr>
+      <tr class="MLB" class="game5"></tr>
+      <tr class="MLB" class="game6"></tr>
+      <tr class="MLB" class="game7"></tr>
+      <tr class="MLB" class="game8"></tr>
+      <tr class="MLB" class="game9"></tr>
+      <tr class="MLB" class="game10"></tr>
+      <tr class="MLB"></tr>
+    </table>
+    <table>
+      <!--NHL GAMES-->
+      <th class="NHL" class="gameHeader">NHL Game Scores</th>
+      <tr class="NHL" class="game1"></tr>
+      <tr class="NHL" class="game2"></tr>
+      <tr class="NHL" class="game3"></tr>
+      <tr class="NHL" class="game4"></tr>
+      <tr class="NHL" class="game5"></tr>
+      <tr class="NHL" class="game6"></tr>
+      <tr class="NHL" class="game7"></tr>
+      <tr class="NHL" class="game8"></tr>
+      <tr class="NHL" class="game9"></tr>
+      <tr class="NHL" class="game10"></tr>
+      <tr class="NHL"></tr>
+    </table>
+    <table>
+      <!--MLS GAMES-->
+      <th class="MLS" class="gameHeader">MLS Game Scores</th>
+      <tr class="MLS" class="game1"></tr>
+      <tr class="MLS" class="game2"></tr>
+      <tr class="MLS" class="game3"></tr>
+      <tr class="MLS" class="game4"></tr>
+      <tr class="MLS" class="game5"></tr>
+      <tr class="MLS" class="game6"></tr>
+      <tr class="MLS" class="game7"></tr>
+      <tr class="MLS" class="game8"></tr>
+      <tr class="MLS" class="game9"></tr>
+      <tr class="MLS" class="game10"></tr>
+    </table>
 </div>
 
 <script type="text/javascript">
@@ -157,6 +162,7 @@
             var response = xhr.responseXML.querySelectorAll(
               "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
             );
+            var gameName = "MLS";
             displayGames(response);
           }
         };
