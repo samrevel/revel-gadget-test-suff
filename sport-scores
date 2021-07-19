@@ -151,9 +151,7 @@
 
   var prefs = new gadgets.Prefs();
 
-  if(__UP_showNFL == false){
-    alert("text)
-  }
+
       var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
       var linkNBA = "https://www.thesportsdb.com/league/4387-NBA";
       var linkMLB = "https://www.thesportsdb.com/league/4424-MLB";
