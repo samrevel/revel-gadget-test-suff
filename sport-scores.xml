@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs title="Sample Gadget" description="Show sport game scores" author="Sam Kim" background="transparent">
@@ -72,7 +71,7 @@
 <meta http-equiv="refresh" content="43200" />
 <h1></h1>
 <div class="my-style">
-    <table id="tableNFL">
+    <table>
       <!--NFL GAMEs-->
       <th class="NFL" class="gameHeader"></th>
       <tr class="NFL" class="game1"></tr>
@@ -88,7 +87,7 @@
       <tr class="NFL"></tr>
     </table>
     <!--NBA GAMES-->
-    <table id="tableNBA">
+    <table>
       <th class="NBA" class="gameHeader"></th>
       <tr class="NBA" class="game1"></tr>
       <tr class="NBA" class="game2"></tr>
@@ -102,7 +101,7 @@
       <tr class="NBA" class="game10"></tr>
       <tr class="NBA"></tr>
     </table>
-    <table id="tableMLB">
+    <table>
       <!--MLB GAMES-->
       <th class="MLB" class="gameHeader"></th>
       <tr class="MLB" class="game1"></tr>
@@ -117,7 +116,7 @@
       <tr class="MLB" class="game10"></tr>
       <tr class="MLB"></tr>
     </table>
-    <table id="tableNHL">
+    <table>
       <!--NHL GAMES-->
       <th class="NHL" class="gameHeader"></th>
       <tr class="NHL" class="game1"></tr>
@@ -132,7 +131,7 @@
       <tr class="NHL" class="game10"></tr>
       <tr class="NHL"></tr>
     </table>
-    <table id="tableMLS">
+    <table>
       <!--MLS GAMES-->
       <th class="MLS" class="gameHeader"></th>
       <tr class="MLS" class="game1"></tr>
@@ -149,37 +148,29 @@
 </div>
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
-  
       var numGames = __UP_numGame__
-
       var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
       var linkNBA = "https://www.thesportsdb.com/league/4387-NBA";
       var linkMLB = "https://www.thesportsdb.com/league/4424-MLB";
       var linkNHL = "https://www.thesportsdb.com/league/4380-NHL";
       var linkMLS =
         "https://www.thesportsdb.com/league/4346-American-Major-League-Soccer";
-      
       //If statments are for hiding or showing differnt leagues  
       if (__UP_showNFL__ == true) {
       yes("NFL", linkNFL);
-      } else {document.getElementById("tableNFL").style.visibility = "collapse";}
-
+      }
       if (__UP_showNBA__ == true) {
       yes("NBA", linkNBA);
-      } else {document.getElementById("tableNBA").style.visibility = "collapse";}
-
+      }
       if (__UP_showMLB__ == true) {
       yes("MLB", linkMLB);
-      } else {document.getElementById("tableMLB").style.visibility = "collapse";}
-
+      }
       if (__UP_showNHL__ == true) {
       yes("NHL", linkNHL);
-      } else {document.getElementById("tableNHL").style.visibility = "collapse";}
-      
+      }
       if (__UP_showMLS__ == true) {
       yes("MLS", linkMLS);
-      } else {document.getElementById("tableMLS").style.visibility = "collapse";}
-
+      }
       function yes(gameName, link) {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", link, true);
@@ -199,43 +190,33 @@
         function displayGames(response) {
           document.getElementsByClassName(gameName)[0].innerHTML =
             gameName + " Game Scores";
-
           document.getElementsByClassName(gameName)[1].innerHTML =
             response[response.length - 10].innerHTML;
             if (numGames == 1){return}
-
           document.getElementsByClassName(gameName)[2].innerHTML =
             response[response.length - 9].innerHTML;
               if (numGames == 2){return}
-
           document.getElementsByClassName(gameName)[3].innerHTML =
             response[response.length - 8].innerHTML;
               if (numGames == 3){return}
-
           document.getElementsByClassName(gameName)[4].innerHTML =
             response[response.length - 7].innerHTML;
               if (numGames == 4){return}
-
           document.getElementsByClassName(gameName)[5].innerHTML =
             response[response.length - 6].innerHTML;
               if (numGames == 5){return}
-
           document.getElementsByClassName(gameName)[6].innerHTML =
             response[response.length - 5].innerHTML;
               if (numGames == 6){return}
-
           document.getElementsByClassName(gameName)[7].innerHTML =
             response[response.length - 4].innerHTML;
               if (numGames == 7){return}
-              
           document.getElementsByClassName(gameName)[8].innerHTML =
             response[response.length - 3].innerHTML;
               if (numGames == 8){return}
-
           document.getElementsByClassName(gameName)[9].innerHTML =
             response[response.length - 2].innerHTML;
               if (numGames == 9){return}
-
           document.getElementsByClassName(gameName)[10].innerHTML =
             response[response.length - 1].innerHTML;
         }
