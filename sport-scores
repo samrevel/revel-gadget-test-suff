@@ -7,6 +7,7 @@
             <EnumValue value="second" display_value="Second" />
         </UserPref>
         <UserPref name="myStylePref" display_name="Example style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
+        <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
         <UserPref name="myBooleanPref" display_name="Example boolean preference" datatype="bool" default_value="true" />
         <UserPref name="myColorPref" display_name="color" datatype="color" default_value="#ff00ff" />
 
@@ -39,18 +40,24 @@
   {
     __UP_myStylePref__;
   }
-      a:link {
-        text-decoration: none;
-        __UP_myStylePref__;
-        pointer-events: none;
-        cursor: default;
+  td:nth-child(5) {
+    __UP_scoreWidth__;
+  }
+
+  a:link {
+    text-decoration: none;
+    __UP_myStylePref__;
+    pointer-events: none;
+    cursor: default;
       }
-      .hidden-xs {
-        visibility: collapse;
-      }
-      td a img {
-        visibility: collapse;
-      }
+    
+  .hidden-xs {
+    visibility: collapse;
+  }
+
+  td a img {
+    visibility: collapse;
+  }
 </style>
 
 <!-- Preferences can be inlined in your HTML like so -->
