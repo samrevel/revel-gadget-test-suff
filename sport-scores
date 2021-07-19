@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs title="Sample Gadget" description="Show sport game scores" author="Sam Kim" background="transparent">
-        <UserPref name="numGames" display_name="Number of games showen per league" datatype="enum" default_value=10>
+        <UserPref name="numGame" display_name="Number of games showen per league" datatype="enum" default_value=10>
           <EnumValue value=1 display_value="1" />
           <EnumValue value=2 display_value="2" />
           <EnumValue value=3 display_value="3" />
@@ -156,7 +156,7 @@
 <script type="text/javascript">
 
   var prefs = new gadgets.Prefs();
-      var numGames = __UP_numGames__
+      var numGames = __UP_numGame__
 
       var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
       var linkNBA = "https://www.thesportsdb.com/league/4387-NBA";
