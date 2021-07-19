@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs title="Sample Gadget" description="Show sport game scores" author="Sam Kim" background="transparent">
@@ -31,7 +32,6 @@
     </ModulePrefs>
     <Content type="html">
         <![CDATA[
-
 <style type="text/css">
   body *
   {
@@ -39,7 +39,6 @@
     letter-spacing: 0; 
     word-spacing: normal;
   }
-
   body
   {
     background: transparent;
@@ -54,7 +53,6 @@
   td:nth-child(5) {
     __UP_scoreWidth__;
   }
-
   a:link {
     text-decoration: none;
     __UP_myStylePref__;
@@ -65,19 +63,16 @@
   .hidden-xs {
     visibility: collapse;
   }
-
   td a img {
     visibility: collapse;
   }
 </style>
-
 <!-- Preferences can be inlined in your HTML like so -->
 <!--Refresh every 12 hours. 12 sec * 60 * 60 = 43200 sec -->
 <meta http-equiv="refresh" content="43200" />
-
 <h1></h1>
 <div class="my-style">
-    <table>
+    <table id="tableNFL">
       <!--NFL GAMEs-->
       <th class="NFL" class="gameHeader"></th>
       <tr class="NFL" class="game1"></tr>
@@ -93,7 +88,7 @@
       <tr class="NFL"></tr>
     </table>
     <!--NBA GAMES-->
-    <table>
+    <table id="tableNBA">
       <th class="NBA" class="gameHeader"></th>
       <tr class="NBA" class="game1"></tr>
       <tr class="NBA" class="game2"></tr>
@@ -107,7 +102,7 @@
       <tr class="NBA" class="game10"></tr>
       <tr class="NBA"></tr>
     </table>
-    <table>
+    <table id="tableMLB">
       <!--MLB GAMES-->
       <th class="MLB" class="gameHeader"></th>
       <tr class="MLB" class="game1"></tr>
@@ -122,7 +117,7 @@
       <tr class="MLB" class="game10"></tr>
       <tr class="MLB"></tr>
     </table>
-    <table>
+    <table id="tableNHL">
       <!--NHL GAMES-->
       <th class="NHL" class="gameHeader"></th>
       <tr class="NHL" class="game1"></tr>
@@ -137,7 +132,7 @@
       <tr class="NHL" class="game10"></tr>
       <tr class="NHL"></tr>
     </table>
-    <table>
+    <table id="tableMLS">
       <!--MLS GAMES-->
       <th class="MLS" class="gameHeader"></th>
       <tr class="MLS" class="game1"></tr>
@@ -152,10 +147,9 @@
       <tr class="MLS" class="game10"></tr>
     </table>
 </div>
-
 <script type="text/javascript">
-
   var prefs = new gadgets.Prefs();
+  
       var numGames = __UP_numGame__
 
       var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
@@ -164,30 +158,32 @@
       var linkNHL = "https://www.thesportsdb.com/league/4380-NHL";
       var linkMLS =
         "https://www.thesportsdb.com/league/4346-American-Major-League-Soccer";
-
+      
       //If statments are for hiding or showing differnt leagues  
       if (__UP_showNFL__ == true) {
       yes("NFL", linkNFL);
-      }
+      } else {document.getElementById("tableNFL").style.visibility = "collapse";}
+
       if (__UP_showNBA__ == true) {
       yes("NBA", linkNBA);
-      }
+      } else {document.getElementById("tableNBA").style.visibility = "collapse";}
+
       if (__UP_showMLB__ == true) {
       yes("MLB", linkMLB);
-      }
+      } else {document.getElementById("tableMLB").style.visibility = "collapse";}
+
       if (__UP_showNHL__ == true) {
       yes("NHL", linkNHL);
-      }
+      } else {document.getElementById("tableNHL").style.visibility = "collapse";}
+      
       if (__UP_showMLS__ == true) {
       yes("MLS", linkMLS);
-      }
+      } else {document.getElementById("tableMLS").style.visibility = "collapse";}
 
       function yes(gameName, link) {
         var xhr = new XMLHttpRequest();
-
         xhr.open("GET", link, true);
         xhr.responseType = "document";
-
         xhr.onload = function () {
           if (xhr.readyState == 4 && xhr.status == 200) {
             var response = xhr.responseXML.querySelectorAll(
@@ -196,11 +192,9 @@
             displayGames(response);
           }
         };
-
         xhr.onerror = function () {
           console.error(xhr.status, xhr.statusText);
         };
-
         //game scores ae the last 10 rows, so you have to pop all but last 10
         function displayGames(response) {
           document.getElementsByClassName(gameName)[0].innerHTML =
@@ -233,7 +227,7 @@
           document.getElementsByClassName(gameName)[7].innerHTML =
             response[response.length - 4].innerHTML;
               if (numGames == 7){return}
-
+              
           document.getElementsByClassName(gameName)[8].innerHTML =
             response[response.length - 3].innerHTML;
               if (numGames == 8){return}
@@ -245,21 +239,13 @@
           document.getElementsByClassName(gameName)[10].innerHTML =
             response[response.length - 1].innerHTML;
         }
-
         xhr.send();
       }
-
-
-
   // This function is called after the gadget has been initialized.
   function onLoad() {
-
   }
-
   gadgets.util.registerOnLoadHandler(onLoad);
-
 </script>
-
 ]]>
     </Content>
 </Module>
