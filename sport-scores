@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs title="Sample Gadget" description="Show sport game scores" author="Sam Kim" background="transparent">
-        <UserPref name="myStylePref" display_name="Example style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
-        <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
+        <UserPref name="numGames" display_name="Number of games showen per league" datatype="enum" default_value=10>
+          <EnumValue value=1 display_value="1" />
+          <EnumValue value=2 display_value="2" />
+          <EnumValue value=3 display_value="3" />
+          <EnumValue value=4 display_value="4" />
+          <EnumValue value=5 display_value="5" />
+          <EnumValue value=6 display_value="6" />
+          <EnumValue value=7 display_value="7" />
+          <EnumValue value=8 display_value="8" />
+          <EnumValue value=9 display_value="9" />
+          <EnumValue value=10 display_value="10" />
+        </UserPref>
         <UserPref name="showNFL" display_name="Show NFL game scores" datatype="bool" default_value="true" />
         <UserPref name="showNBA" display_name="Show NBA game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLB" display_name="Show MLB game scores" datatype="bool" default_value="true" />
         <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
+        <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
+        <UserPref name="myStylePref" display_name="Example style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
+
 
         <!-- The following preferences should not be modified -->
         <UserPref name="ForeColor" datatype="hidden" />
@@ -143,7 +156,7 @@
 <script type="text/javascript">
 
   var prefs = new gadgets.Prefs();
-
+      var numGames = __UP_numGames__
 
       var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
       var linkNBA = "https://www.thesportsdb.com/league/4387-NBA";
@@ -193,35 +206,44 @@
           document.getElementsByClassName(gameName)[0].innerHTML =
             gameName + " Game Scores";
 
-          document.getElementsByClassName(gameName)[10].innerHTML =
-            response[response.length - 1].innerHTML;
-
-          document.getElementsByClassName(gameName)[9].innerHTML =
-            response[response.length - 2].innerHTML;
-
-          document.getElementsByClassName(gameName)[8].innerHTML =
-            response[response.length - 3].innerHTML;
-
-          document.getElementsByClassName(gameName)[7].innerHTML =
-            response[response.length - 4].innerHTML;
-
-          document.getElementsByClassName(gameName)[6].innerHTML =
-            response[response.length - 5].innerHTML;
-
-          document.getElementsByClassName(gameName)[5].innerHTML =
-            response[response.length - 6].innerHTML;
-
-          document.getElementsByClassName(gameName)[4].innerHTML =
-            response[response.length - 7].innerHTML;
-
-          document.getElementsByClassName(gameName)[3].innerHTML =
-            response[response.length - 8].innerHTML;
+          document.getElementsByClassName(gameName)[1].innerHTML =
+            response[response.length - 10].innerHTML;
+            if (numGames == 1){return}
 
           document.getElementsByClassName(gameName)[2].innerHTML =
             response[response.length - 9].innerHTML;
+              if (numGames == 2){return}
 
-          document.getElementsByClassName(gameName)[1].innerHTML =
-            response[response.length - 10].innerHTML;
+          document.getElementsByClassName(gameName)[3].innerHTML =
+            response[response.length - 8].innerHTML;
+              if (numGames == 3){return}
+
+          document.getElementsByClassName(gameName)[4].innerHTML =
+            response[response.length - 7].innerHTML;
+              if (numGames == 4){return}
+
+          document.getElementsByClassName(gameName)[5].innerHTML =
+            response[response.length - 6].innerHTML;
+              if (numGames == 5){return}
+
+          document.getElementsByClassName(gameName)[6].innerHTML =
+            response[response.length - 5].innerHTML;
+              if (numGames == 6){return}
+
+          document.getElementsByClassName(gameName)[7].innerHTML =
+            response[response.length - 4].innerHTML;
+              if (numGames == 7){return}
+
+          document.getElementsByClassName(gameName)[8].innerHTML =
+            response[response.length - 3].innerHTML;
+              if (numGames == 8){return}
+
+          document.getElementsByClassName(gameName)[9].innerHTML =
+            response[response.length - 2].innerHTML;
+              if (numGames == 9){return}
+
+          document.getElementsByClassName(gameName)[10].innerHTML =
+            response[response.length - 1].innerHTML;
         }
 
         xhr.send();
