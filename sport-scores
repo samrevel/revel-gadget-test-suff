@@ -158,13 +158,23 @@
       var linkMLS =
         "https://www.thesportsdb.com/league/4346-American-Major-League-Soccer";
 
+      //If statments are for hiding or showing differnt leagues  
       if (__UP_showNFL__ == true) {
       yes("NFL", linkNFL);
       }
-      yes("NBA", linkNBA);
-      yes("MLB", linkMLB);
-      yes("NHL", linkNHL);
-      yes("MLS", linkMLS);
+      if (__UP_showNBA__ == true) {
+      yes("MLB", linkNBA);
+      }
+      if (__UP_showMLB__ == true) {
+      yes("NFL", linkMLB);
+      }
+      if (__UP_showNHL__ == true) {
+      yes("NFL", linkNHL);
+      }
+      if (__UP_showMLS__ == true) {
+      yes("NFL", linkMLS);
+      }
+
       function yes(gameName, link) {
         var xhr = new XMLHttpRequest();
 
