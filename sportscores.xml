@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-    <ModulePrefs title="Sample Gadget" description="Show sport game scores." author="Sam Kim" background="transparent">
+    <ModulePrefs title="Sample Gadget" description="Show sport game scores" author="Sam Kim" background="transparent">
         <UserPref name="numGame" display_name="Number of games showen per league" datatype="enum" default_value="10">
           <EnumValue value="1" display_value="1" />
           <EnumValue value="2" display_value="2" />
@@ -63,7 +63,7 @@
     visibility: collapse;
   }
   td a img {
-    visibility: collapse;
+    display: none;
   }
 </style>
 <!-- Preferences can be inlined in your HTML like so -->
@@ -174,7 +174,7 @@
       if (__UP_showNHL__ == true) {
       yes("NHL", linkNHL);
       } else {document.getElementById("tableNHL").style.visibility = "collapse";}
-      
+
       if (__UP_showMLS__ == true) {
       yes("MLS", linkMLS);
       } else {document.getElementById("tableMLS").style.visibility = "collapse";}
