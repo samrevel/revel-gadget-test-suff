@@ -73,8 +73,8 @@
 <div class="my-style">
     <table id="tableNFL">
       <!--NFL GAMEs-->
-      <th id="NFL" class="NFL" class="gameHeader"></th>
-      <tr class="NFL" class="game1"></tr>
+      <th class="NFL" class="gameHeader"></th>
+      <tr id="NFL" class="NFL" class="game1"></tr>
       <tr class="NFL" class="game2"></tr>
       <tr class="NFL" class="game3"></tr>
       <tr class="NFL" class="game4"></tr>
@@ -88,8 +88,8 @@
     </table>
     <!--NBA GAMES-->
     <table id="tableNBA">
-      <th id="NBA" class="NBA" class="gameHeader"></th>
-      <tr class="NBA" class="game1"></tr>
+      <th class="NBA" class="gameHeader"></th>
+      <tr id="NBA" class="NBA" class="game1"></tr>
       <tr class="NBA" class="game2"></tr>
       <tr class="NBA" class="game3"></tr>
       <tr class="NBA" class="game4"></tr>
@@ -103,8 +103,8 @@
     </table>
     <table id="tableMLB">
       <!--MLB GAMES-->
-      <th id="MLB" class="MLB" class="gameHeader"></th>
-      <tr class="MLB" class="game1"></tr>
+      <th class="MLB" class="gameHeader"></th>
+      <tr id="MLB" class="MLB" class="game1"></tr>
       <tr class="MLB" class="game2"></tr>
       <tr class="MLB" class="game3"></tr>
       <tr class="MLB" class="game4"></tr>
@@ -118,8 +118,8 @@
     </table>
     <table id="tableNHL">
       <!--NHL GAMES-->
-      <th id="NHL" class="NHL" class="gameHeader"></th>
-      <tr class="NHL" class="game1"></tr>
+      <th class="NHL" class="gameHeader"></th>
+      <tr id="NHL" class="NHL" class="game1"></tr>
       <tr class="NHL" class="game2"></tr>
       <tr class="NHL" class="game3"></tr>
       <tr class="NHL" class="game4"></tr>
@@ -133,8 +133,8 @@
     </table>
     <table id="tableMLS">
       <!--MLS GAMES-->
-      <th id="MLS" class="MLS" class="gameHeader"></th>
-      <tr class="MLS" class="game1"></tr>
+      <th class="MLS" class="gameHeader"></th>
+      <tr id="MLS" class="MLS" class="game1"></tr>
       <tr class="MLS" class="game2"></tr>
       <tr class="MLS" class="game3"></tr>
       <tr class="MLS" class="game4"></tr>
@@ -199,10 +199,10 @@
           document.getElementsByClassName(gameName)[0].innerHTML =
             gameName + " Game Scores";
 
-          height = document.getElementById(gameName).offsetHeight
-        
           document.getElementsByClassName(gameName)[1].innerHTML =
             response[response.length - 10].innerHTML;
+          //change hieght of img so it fix better  
+          height = document.getElementById(gameName).offsetHeight
             if (numGames == 1){return resizeImg()}
 
           document.getElementsByClassName(gameName)[2].innerHTML =
