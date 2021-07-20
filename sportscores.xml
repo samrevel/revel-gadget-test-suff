@@ -14,8 +14,8 @@
           <EnumValue value="10" display_value="10" />
         </UserPref>
         <UserPref name="header" display_name="Show the game header" datatype="enum" default_value="show">
-          <EnumValue value=block display_value="Show game headers" />
-          <EnumValue value=none display_value="Hide game headers" />
+          <EnumValue value="block" display_value="Show game headers" />
+          <EnumValue value="none" display_value="Hide game headers" />
         </UserPref>
         <UserPref name="showNFL" display_name="Show NFL game scores" datatype="bool" default_value="true" />
         <UserPref name="showNBA" display_name="Show NBA game scores" datatype="bool" default_value="true" />
