@@ -248,7 +248,7 @@
       console.log("it ran")
       x = document.getElementsByTagName("IMG");
       for (i = 0; i < x.length; i++) {
-        x[i].style.height = height - 11 + "px";
+        x[i].style.width = height - 11 + "px";
       }
     }
   // This function is called after the gadget has been initialized.
