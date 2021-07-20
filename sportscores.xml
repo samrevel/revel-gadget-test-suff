@@ -19,7 +19,6 @@
         <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
         <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
-        <UserPref name="imgWidth" display_name="Size of the team logos" datatype="style" default_value="width: 22px;" required="false" />
         <UserPref name="myStylePref" display_name="Style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
 
 
@@ -66,9 +65,6 @@
   td a img {
     display: none;
   }
-  img {
-    __UP_imgWidth__
-  }
 </style>
 <!-- Preferences can be inlined in your HTML like so -->
 <!--Refresh every 12 hours. 12 sec * 60 * 60 = 43200 sec -->
@@ -77,7 +73,7 @@
 <div class="my-style">
     <table id="tableNFL">
       <!--NFL GAMEs-->
-      <th class="NFL" class="gameHeader"></th>
+      <th id="NFL" class="NFL" class="gameHeader"></th>
       <tr class="NFL" class="game1"></tr>
       <tr class="NFL" class="game2"></tr>
       <tr class="NFL" class="game3"></tr>
@@ -92,7 +88,7 @@
     </table>
     <!--NBA GAMES-->
     <table id="tableNBA">
-      <th class="NBA" class="gameHeader"></th>
+      <th id="NBA" class="NBA" class="gameHeader"></th>
       <tr class="NBA" class="game1"></tr>
       <tr class="NBA" class="game2"></tr>
       <tr class="NBA" class="game3"></tr>
@@ -107,7 +103,7 @@
     </table>
     <table id="tableMLB">
       <!--MLB GAMES-->
-      <th class="MLB" class="gameHeader"></th>
+      <th id="MLB" class="MLB" class="gameHeader"></th>
       <tr class="MLB" class="game1"></tr>
       <tr class="MLB" class="game2"></tr>
       <tr class="MLB" class="game3"></tr>
@@ -122,7 +118,7 @@
     </table>
     <table id="tableNHL">
       <!--NHL GAMES-->
-      <th class="NHL" class="gameHeader"></th>
+      <th id="NHL" class="NHL" class="gameHeader"></th>
       <tr class="NHL" class="game1"></tr>
       <tr class="NHL" class="game2"></tr>
       <tr class="NHL" class="game3"></tr>
@@ -137,7 +133,7 @@
     </table>
     <table id="tableMLS">
       <!--MLS GAMES-->
-      <th class="MLS" class="gameHeader"></th>
+      <th id="MLS" class="MLS" class="gameHeader"></th>
       <tr class="MLS" class="game1"></tr>
       <tr class="MLS" class="game2"></tr>
       <tr class="MLS" class="game3"></tr>
@@ -152,7 +148,7 @@
 </div>
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
-  
+      var height
       var numGames = __UP_numGame__
 
       var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
@@ -203,47 +199,58 @@
           document.getElementsByClassName(gameName)[0].innerHTML =
             gameName + " Game Scores";
 
+          height = document.getElementById(gameName).offsetHeight
+        
           document.getElementsByClassName(gameName)[1].innerHTML =
             response[response.length - 10].innerHTML;
-            if (numGames == 1){return}
+            if (numGames == 1){return resizeImg()}
 
           document.getElementsByClassName(gameName)[2].innerHTML =
             response[response.length - 9].innerHTML;
-              if (numGames == 2){return}
+              if (numGames == 2){return resizeImg()}
 
           document.getElementsByClassName(gameName)[3].innerHTML =
             response[response.length - 8].innerHTML;
-              if (numGames == 3){return}
+              if (numGames == 3){return resizeImg()}
 
           document.getElementsByClassName(gameName)[4].innerHTML =
             response[response.length - 7].innerHTML;
-              if (numGames == 4){return}
+              if (numGames == 4){return resizeImg()}
 
           document.getElementsByClassName(gameName)[5].innerHTML =
             response[response.length - 6].innerHTML;
-              if (numGames == 5){return}
+              if (numGames == 5){return resizeImg()}
 
           document.getElementsByClassName(gameName)[6].innerHTML =
             response[response.length - 5].innerHTML;
-              if (numGames == 6){return}
+              if (numGames == 6){return resizeImg()}
 
           document.getElementsByClassName(gameName)[7].innerHTML =
             response[response.length - 4].innerHTML;
-              if (numGames == 7){return}
+              if (numGames == 7){return resizeImg()}
               
           document.getElementsByClassName(gameName)[8].innerHTML =
             response[response.length - 3].innerHTML;
-              if (numGames == 8){return}
+              if (numGames == 8){return resizeImg()}
 
           document.getElementsByClassName(gameName)[9].innerHTML =
             response[response.length - 2].innerHTML;
-              if (numGames == 9){return}
+              if (numGames == 9){return resizeImg()}
 
           document.getElementsByClassName(gameName)[10].innerHTML =
             response[response.length - 1].innerHTML;
+            if (numGames == 10){return resizeImg()}
         }
         xhr.send();
       }
+          function resizeImg() {
+      var x, i;
+      console.log("it ran")
+      x = document.getElementsByTagName("IMG");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.width = height - 11 + "px";
+      }
+    }
   // This function is called after the gadget has been initialized.
   function onLoad() {
   }
