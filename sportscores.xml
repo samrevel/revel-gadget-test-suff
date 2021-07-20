@@ -17,11 +17,11 @@
         <UserPref name="showNFL" display_name="Show NFL game scores" datatype="bool" default_value="true" />
         <UserPref name="showNBA" display_name="Show NBA game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLB" display_name="Show MLB game scores" datatype="bool" default_value="true" />
-        <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="true" />
+        <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="false" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
+        <UserPref name="header" display_name="Show league headers" datatype="bool" default_value="true" />
 
         <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
-        <UserPref name="header" display_name="Show or hide league headers (to hide change block to none)" datatype="style" default_value="display: block;" required="false" />
         <UserPref name="myStylePref" display_name="Style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
 
         <!-- The following preferences should not be modified -->
@@ -68,9 +68,6 @@
     display: none;
   }
   tr:nth-child(1) > th{
-    __UP_header__;
-  }
-  tr:nth-child(12){
     __UP_header__;
   }
 </style>
@@ -164,6 +161,17 @@
 
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
+
+      //hides header and remove table border
+      if(__UP_header__ == false){
+        var hideHeader, i;
+        hideHeader = document.querySelectorAll("table")
+        for(i = 0; i < hideHeader.length; i++){  
+          document.querySelectorAll("table")[i].style.borderSpacing = "0px"
+          document.querySelectorAll("th")[i].style.display ="none"
+        }
+      }
+
       var height
       var numGames = __UP_numGame__
       
