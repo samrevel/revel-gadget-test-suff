@@ -13,6 +13,10 @@
           <EnumValue value="9" display_value="9" />
           <EnumValue value="10" display_value="10" />
         </UserPref>
+        <UserPref name="header" display_name="Show the game header" datatype="enum" default_value="show">
+          <EnumValue value=block display_value="Show game headers" />
+          <EnumValue value=none display_value="Hide game headers" />
+        </UserPref>
         <UserPref name="showNFL" display_name="Show NFL game scores" datatype="bool" default_value="true" />
         <UserPref name="showNBA" display_name="Show NBA game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLB" display_name="Show MLB game scores" datatype="bool" default_value="true" />
@@ -65,6 +69,9 @@
   td a img {
     display: none;
   }
+  .gameHeader {
+    display = __UP_header__
+  }
 </style>
 <!-- Preferences can be inlined in your HTML like so -->
 <!--Refresh every 12 hours. 12 sec * 60 * 60 = 43200 sec -->
@@ -84,7 +91,7 @@
       <tr class="NFL" class="game8"></tr>
       <tr class="NFL" class="game9"></tr>
       <tr class="NFL" class="game10"></tr>
-      <tr class="NFL"></tr>
+      <tr class="NFL" class="gameHeader"></tr>
     </table>
     <!--NBA GAMES-->
     <table id="tableNBA">
@@ -99,7 +106,7 @@
       <tr class="NBA" class="game8"></tr>
       <tr class="NBA" class="game9"></tr>
       <tr class="NBA" class="game10"></tr>
-      <tr class="NBA"></tr>
+      <tr class="NBA" class="gameHeader"></tr>
     </table>
     <table id="tableMLB">
       <!--MLB GAMES-->
@@ -114,7 +121,7 @@
       <tr class="MLB" class="game8"></tr>
       <tr class="MLB" class="game9"></tr>
       <tr class="MLB" class="game10"></tr>
-      <tr class="MLB"></tr>
+      <tr class="MLB" class="gameHeader"></tr>
     </table>
     <table id="tableNHL">
       <!--NHL GAMES-->
@@ -129,7 +136,7 @@
       <tr class="NHL" class="game8"></tr>
       <tr class="NHL" class="game9"></tr>
       <tr class="NHL" class="game10"></tr>
-      <tr class="NHL"></tr>
+      <tr class="NHL" class="gameHeader"></tr>
     </table>
     <table id="tableMLS">
       <!--MLS GAMES-->
