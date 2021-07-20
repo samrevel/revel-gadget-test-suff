@@ -164,10 +164,10 @@
 
       //hides header and remove table border
       if(__UP_header__ == false){
-        var hideHeader, i;
-        hideHeader = document.querySelectorAll("th")
-        for(i = 0; i < hideHeader.length; i++){  
-          document.querySelectorAll("th")[i].style.display ="none"
+      var hideHeader, i;
+      hideHeader = document.querySelectorAll("th")
+      for(i = 0; i < hideHeader.length; i++){  
+        document.querySelectorAll("th")[i].style.display ="none"
         }
       }
 
