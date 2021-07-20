@@ -215,52 +215,52 @@
             response[response.length - 10].innerHTML;
           //change hieght of img so it fix better  
           height = document.getElementById(gameName).offsetHeight
-            if (numGames == 1){return resizeImg()}
+            if (numGames == 1){return resizeImg(gameName)}
 
           document.getElementsByClassName(gameName)[2].innerHTML =
             response[response.length - 9].innerHTML;
-              if (numGames == 2){return resizeImg()}
+              if (numGames == 2){return resizeImg(gameName)}
 
           document.getElementsByClassName(gameName)[3].innerHTML =
             response[response.length - 8].innerHTML;
-              if (numGames == 3){return resizeImg()}
+              if (numGames == 3){return resizeImg(gameName)}
 
           document.getElementsByClassName(gameName)[4].innerHTML =
             response[response.length - 7].innerHTML;
-              if (numGames == 4){return resizeImg()}
+              if (numGames == 4){return resizeImg(gameName)}
 
           document.getElementsByClassName(gameName)[5].innerHTML =
             response[response.length - 6].innerHTML;
-              if (numGames == 5){return resizeImg()}
+              if (numGames == 5){return resizeImg(gameName)}
 
           document.getElementsByClassName(gameName)[6].innerHTML =
             response[response.length - 5].innerHTML;
-              if (numGames == 6){return resizeImg()}
+              if (numGames == 6){return resizeImg(gameName)}
 
           document.getElementsByClassName(gameName)[7].innerHTML =
             response[response.length - 4].innerHTML;
-              if (numGames == 7){return resizeImg()}
+              if (numGames == 7){return resizeImg(gameName)}
               
           document.getElementsByClassName(gameName)[8].innerHTML =
             response[response.length - 3].innerHTML;
-              if (numGames == 8){return resizeImg()}
+              if (numGames == 8){return resizeImg(gameName)}
 
           document.getElementsByClassName(gameName)[9].innerHTML =
             response[response.length - 2].innerHTML;
-              if (numGames == 9){return resizeImg()}
+              if (numGames == 9){return resizeImg(gameName)}
 
           document.getElementsByClassName(gameName)[10].innerHTML =
             response[response.length - 1].innerHTML;
-            if (numGames == 10){return resizeImg()}
+            if (numGames == 10){return resizeImg(gameName)}
         }
         xhr.send();
       }
-          function resizeImg() {
-      var x, i;
-      document.getElementsByClassName(game)[0].style.display = "none"
-      x = document.getElementsByTagName("IMG");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.width = height - 11 + "px";
+      function resizeImg() {
+        var x, i;
+        document.getElementsByClassName(game)[0].style.display = "none"
+        x = document.getElementsByTagName("IMG");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.width = height - 11 + "px";
       }
     }
   // This function is called after the gadget has been initialized.
