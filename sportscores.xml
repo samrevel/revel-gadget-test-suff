@@ -61,7 +61,7 @@
       }
     
   .hidden-xs {
-    visibility: collapse;
+    display: none;
   }
   td a img {
     display: none;
@@ -162,14 +162,16 @@
   var prefs = new gadgets.Prefs();
       var height
       var numGames = __UP_numGame__
-
+      
+      //links are used to  get game data for each leauge
       var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
       var linkNBA = "https://www.thesportsdb.com/league/4387-NBA";
       var linkMLB = "https://www.thesportsdb.com/league/4424-MLB";
       var linkNHL = "https://www.thesportsdb.com/league/4380-NHL";
       var linkMLS =
         "https://www.thesportsdb.com/league/4346-American-Major-League-Soccer";
-      
+
+
       //If statments are for hiding or showing differnt leagues  
       if (__UP_showNFL__ == true) {
       yes("NFL", linkNFL);
@@ -191,6 +193,9 @@
       yes("MLS", linkMLS);
       } else {document.getElementById("tableMLS").style.visibility = "collapse";}
 
+
+      //yes functions is run to get data from website and put into html to display
+      //i dont know how it works but YES it works
       function yes(gameName, link) {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", link, true);
@@ -206,58 +211,67 @@
         xhr.onerror = function () {
           console.error(xhr.status, xhr.statusText);
         };
+
+
         //game scores ae the last 10 rows, so you have to pop all but last 10
+        //the funtion writes game scores to html table
+        //if statements are for showing less scores
+
         function displayGames(response) {
           document.getElementsByClassName(gameName)[0].innerHTML =
             gameName + " Game Scores";
 
           document.getElementsByClassName(gameName)[1].innerHTML =
             response[response.length - 10].innerHTML;
+          
           //change hieght of img so it fix better  
           height = document.getElementById(gameName).offsetHeight
-            if (numGames == 1){return resizeImg(gameName)}
+
+            if (numGames == 1){return resizeImg()}
 
           document.getElementsByClassName(gameName)[2].innerHTML =
             response[response.length - 9].innerHTML;
-              if (numGames == 2){return resizeImg(gameName)}
+              if (numGames == 2){return resizeImg()}
 
           document.getElementsByClassName(gameName)[3].innerHTML =
             response[response.length - 8].innerHTML;
-              if (numGames == 3){return resizeImg(gameName)}
+              if (numGames == 3){return resizeImg()}
 
           document.getElementsByClassName(gameName)[4].innerHTML =
             response[response.length - 7].innerHTML;
-              if (numGames == 4){return resizeImg(gameName)}
+              if (numGames == 4){return resizeImg()}
 
           document.getElementsByClassName(gameName)[5].innerHTML =
             response[response.length - 6].innerHTML;
-              if (numGames == 5){return resizeImg(gameName)}
+              if (numGames == 5){return resizeImg()}
 
           document.getElementsByClassName(gameName)[6].innerHTML =
             response[response.length - 5].innerHTML;
-              if (numGames == 6){return resizeImg(gameName)}
+              if (numGames == 6){return resizeImg()}
 
           document.getElementsByClassName(gameName)[7].innerHTML =
             response[response.length - 4].innerHTML;
-              if (numGames == 7){return resizeImg(gameName)}
+              if (numGames == 7){return resizeImg()}
               
           document.getElementsByClassName(gameName)[8].innerHTML =
             response[response.length - 3].innerHTML;
-              if (numGames == 8){return resizeImg(gameName)}
+              if (numGames == 8){return resizeImg()}
 
           document.getElementsByClassName(gameName)[9].innerHTML =
             response[response.length - 2].innerHTML;
-              if (numGames == 9){return resizeImg(gameName)}
+              if (numGames == 9){return resizeImg()}
 
           document.getElementsByClassName(gameName)[10].innerHTML =
             response[response.length - 1].innerHTML;
-            if (numGames == 10){return resizeImg(gameName)}
+            if (numGames == 10){return resizeImg()}
         }
+        //if i get rid of this, everythhing braek
         xhr.send();
       }
+
+      //resizeImg is for making all the images the same sizes as the text
       function resizeImg() {
         var x, i;
-        document.getElementsByClassName(game)[0].style.display = "none"
         x = document.getElementsByTagName("IMG");
         for (i = 0; i < x.length; i++) {
           x[i].style.width = height - 11 + "px";
