@@ -13,14 +13,10 @@
           <EnumValue value="9" display_value="9" />
           <EnumValue value="10" display_value="10" />
         </UserPref>
-        <UserPref name="header" display_name="Show the game header" datatype="enum" default_value="block">
-          <EnumValue value="block" display_value="Show game headers" />
-          <EnumValue value="none" display_value="Hide game headers" />
-        </UserPref>
         <UserPref name="showNFL" display_name="Show NFL game scores" datatype="bool" default_value="true" />
         <UserPref name="showNBA" display_name="Show NBA game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLB" display_name="Show MLB game scores" datatype="bool" default_value="true" />
-        <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="false" />
+        <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
         <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
         <UserPref name="myStylePref" display_name="Style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
@@ -88,7 +84,7 @@
       <tr class="NFL" class="game8"></tr>
       <tr class="NFL" class="game9"></tr>
       <tr class="NFL" class="game10"></tr>
-      <tr class="NFL" class="gameHeader"></tr>
+      <tr class="NFL"></tr>
     </table>
     <!--NBA GAMES-->
     <table id="tableNBA">
@@ -103,7 +99,7 @@
       <tr class="NBA" class="game8"></tr>
       <tr class="NBA" class="game9"></tr>
       <tr class="NBA" class="game10"></tr>
-      <tr class="NBA" class="gameHeader"></tr>
+      <tr class="NBA"></tr>
     </table>
     <table id="tableMLB">
       <!--MLB GAMES-->
@@ -118,7 +114,7 @@
       <tr class="MLB" class="game8"></tr>
       <tr class="MLB" class="game9"></tr>
       <tr class="MLB" class="game10"></tr>
-      <tr class="MLB" class="gameHeader"></tr>
+      <tr class="MLB"></tr>
     </table>
     <table id="tableNHL">
       <!--NHL GAMES-->
@@ -133,7 +129,7 @@
       <tr class="NHL" class="game8"></tr>
       <tr class="NHL" class="game9"></tr>
       <tr class="NHL" class="game10"></tr>
-      <tr class="NHL" class="gameHeader"></tr>
+      <tr class="NHL"></tr>
     </table>
     <table id="tableMLS">
       <!--MLS GAMES-->
@@ -148,7 +144,6 @@
       <tr class="MLS" class="game8"></tr>
       <tr class="MLS" class="game9"></tr>
       <tr class="MLS" class="game10"></tr>
-      <tr class="MLS"></tr>
     </table>
 </div>
 <script type="text/javascript">
@@ -206,56 +201,54 @@
 
           document.getElementsByClassName(gameName)[1].innerHTML =
             response[response.length - 10].innerHTML;
-          
-          //change height of img so it fix better  
+          //change hieght of img so it fix better  
           height = document.getElementById(gameName).offsetHeight
-            if (numGames == 1){return resizeImg(gameName)}
+            if (numGames == 1){return resizeImg()}
 
           document.getElementsByClassName(gameName)[2].innerHTML =
             response[response.length - 9].innerHTML;
-              if (numGames == 2){return resizeImg(gameName)}
+              if (numGames == 2){return resizeImg()}
 
           document.getElementsByClassName(gameName)[3].innerHTML =
             response[response.length - 8].innerHTML;
-              if (numGames == 3){return resizeImg(gameName)}
+              if (numGames == 3){return resizeImg()}
 
           document.getElementsByClassName(gameName)[4].innerHTML =
             response[response.length - 7].innerHTML;
-              if (numGames == 4){return resizeImg(gameName)}
+              if (numGames == 4){return resizeImg()}
 
           document.getElementsByClassName(gameName)[5].innerHTML =
             response[response.length - 6].innerHTML;
-              if (numGames == 5){return resizeImg(gameName)}
+              if (numGames == 5){return resizeImg()}
 
           document.getElementsByClassName(gameName)[6].innerHTML =
             response[response.length - 5].innerHTML;
-              if (numGames == 6){return resizeImg(gameName)}
+              if (numGames == 6){return resizeImg()}
 
           document.getElementsByClassName(gameName)[7].innerHTML =
             response[response.length - 4].innerHTML;
-              if (numGames == 7){return resizeImg(gameName)}
+              if (numGames == 7){return resizeImg()}
               
           document.getElementsByClassName(gameName)[8].innerHTML =
             response[response.length - 3].innerHTML;
-              if (numGames == 8){return resizeImg(gameName)}
+              if (numGames == 8){return resizeImg()}
 
           document.getElementsByClassName(gameName)[9].innerHTML =
             response[response.length - 2].innerHTML;
-              if (numGames == 9){return resizeImg(gameName)}
+              if (numGames == 9){return resizeImg()}
 
           document.getElementsByClassName(gameName)[10].innerHTML =
             response[response.length - 1].innerHTML;
-            if (numGames == 10){return resizeImg(gameName)}
+            if (numGames == 10){return resizeImg()}
         }
         xhr.send();
       }
-      function resizeImg(games) {
-        document.getElementsByClassName(game)[0].style.display = __UP_header__
-        document.getElementsByClassName(game)[11].style.display = __UP_header__
-        var x, i;
-        x = document.getElementsByTagName("IMG");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.width = height - 11 + "px";
+          function resizeImg() {
+      var x, i;
+      console.log("it ran")
+      x = document.getElementsByTagName("IMG");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.height = height - 11 + "px";
       }
     }
   // This function is called after the gadget has been initialized.
