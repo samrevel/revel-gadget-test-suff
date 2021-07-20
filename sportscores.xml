@@ -257,7 +257,7 @@
       }
           function resizeImg() {
       var x, i;
-      console.log("it ran")
+      document.getElementsByClassName(game)[0].style.display = "none"
       x = document.getElementsByTagName("IMG");
       for (i = 0; i < x.length; i++) {
         x[i].style.width = height - 11 + "px";
