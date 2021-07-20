@@ -19,6 +19,7 @@
         <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
         <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
+        <UserPref name="header" display_name="Header of game scores (to hide headers put display: none;)" datatype="style" default_value="" required="true" />
         <UserPref name="myStylePref" display_name="Style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
 
 
@@ -65,7 +66,12 @@
   td a img {
     display: none;
   }
+  .gameHeader{
+    __UP_header__;
+  }
 </style>
+
+
 <!-- Preferences can be inlined in your HTML like so -->
 <!--Refresh every 12 hours. 12 sec * 60 * 60 = 43200 sec -->
 <meta http-equiv="refresh" content="43200" />
@@ -86,6 +92,7 @@
       <tr class="NFL" class="game10"></tr>
       <tr class="NFL"></tr>
     </table>
+
     <!--NBA GAMES-->
     <table id="tableNBA">
       <th class="NBA" class="gameHeader"></th>
@@ -101,6 +108,7 @@
       <tr class="NBA" class="game10"></tr>
       <tr class="NBA"></tr>
     </table>
+
     <table id="tableMLB">
       <!--MLB GAMES-->
       <th class="MLB" class="gameHeader"></th>
@@ -116,6 +124,7 @@
       <tr class="MLB" class="game10"></tr>
       <tr class="MLB"></tr>
     </table>
+
     <table id="tableNHL">
       <!--NHL GAMES-->
       <th class="NHL" class="gameHeader"></th>
@@ -131,6 +140,7 @@
       <tr class="NHL" class="game10"></tr>
       <tr class="NHL"></tr>
     </table>
+
     <table id="tableMLS">
       <!--MLS GAMES-->
       <th class="MLS" class="gameHeader"></th>
@@ -146,6 +156,8 @@
       <tr class="MLS" class="game10"></tr>
     </table>
 </div>
+
+
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
       var height
