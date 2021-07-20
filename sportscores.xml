@@ -70,6 +70,9 @@
   tr:nth-child(1) > th{
     __UP_header__;
   }
+  div{
+    line-height: 0px;
+  }
 </style>
 
 
