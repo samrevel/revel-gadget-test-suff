@@ -68,7 +68,10 @@
     display: none;
   }
   tr:nth-child(1) > th{
-    __UP_header__
+    __UP_header__;
+  }
+  tr:nth-child(12){
+    __UP_header__;
   }
 </style>
 
