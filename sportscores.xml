@@ -186,23 +186,23 @@
       //If statments are for hiding or showing differnt leagues  
       if (__UP_showNFL__ == true) {
       yes("NFL", linkNFL);
-      } else {document.getElementById("tableNFL").style.visibility = "collapse";}
+      } else {document.getElementById("tableNFL").style.display ="none";}
 
       if (__UP_showNBA__ == true) {
       yes("NBA", linkNBA);
-      } else {document.getElementById("tableNBA").style.visibility = "collapse";}
+      } else {document.getElementById("tableNBA").style.display ="none";}
 
       if (__UP_showMLB__ == true) {
       yes("MLB", linkMLB);
-      } else {document.getElementById("tableMLB").style.visibility = "collapse";}
+      } else {document.getElementById("tableMLB").style.display ="none";}
 
       if (__UP_showNHL__ == true) {
       yes("NHL", linkNHL);
-      } else {document.getElementById("tableNHL").style.visibility = "collapse";}
+      } else {document.getElementById("tableNHL").style.display ="none";}
 
       if (__UP_showMLS__ == true) {
       yes("MLS", linkMLS);
-      } else {document.getElementById("tableMLS").style.visibility = "collapse";}
+      } else {document.getElementById("tableMLS").style.display ="none";}
 
 
       //yes functions is run to get data from website and put into html to display
