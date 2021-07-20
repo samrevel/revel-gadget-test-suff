@@ -76,9 +76,9 @@
 <!-- Preferences can be inlined in your HTML like so -->
 <!--Refresh every 12 hours. 12 sec * 60 * 60 = 43200 sec -->
 <meta http-equiv="refresh" content="43200" />
-<h1></h1>
-<div class="my-style">
-    <table id="tableNFL">
+
+<table class="my-style">
+    <div id="tableNFL">
       <!--NFL GAMEs-->
       <th class="NFL" class="gameHeader"></th>
       <tr id="NFL" class="NFL" class="game1"></tr>
@@ -92,10 +92,10 @@
       <tr class="NFL" class="game9"></tr>
       <tr class="NFL" class="game10"></tr>
       <tr class="NFL"></tr>
-    </table>
+    </div>
 
     <!--NBA GAMES-->
-    <table id="tableNBA">
+    <div id="tableNBA">
       <th class="NBA" class="gameHeader"></th>
       <tr id="NBA" class="NBA" class="game1"></tr>
       <tr class="NBA" class="game2"></tr>
@@ -108,9 +108,9 @@
       <tr class="NBA" class="game9"></tr>
       <tr class="NBA" class="game10"></tr>
       <tr class="NBA"></tr>
-    </table>
+    </div>
 
-    <table id="tableMLB">
+    <div id="tableMLB">
       <!--MLB GAMES-->
       <th class="MLB" class="gameHeader"></th>
       <tr id="MLB" class="MLB" class="game1"></tr>
@@ -124,9 +124,9 @@
       <tr class="MLB" class="game9"></tr>
       <tr class="MLB" class="game10"></tr>
       <tr class="MLB"></tr>
-    </table>
+    </div>
 
-    <table id="tableNHL">
+    <div id="tableNHL">
       <!--NHL GAMES-->
       <th class="NHL" class="gameHeader"></th>
       <tr id="NHL" class="NHL" class="game1"></tr>
@@ -140,9 +140,9 @@
       <tr class="NHL" class="game9"></tr>
       <tr class="NHL" class="game10"></tr>
       <tr class="NHL"></tr>
-    </table>
+    </div>
 
-    <table id="tableMLS">
+    <div id="tableMLS">
       <!--MLS GAMES-->
       <th class="MLS" class="gameHeader"></th>
       <tr id="MLS" class="MLS" class="game1"></tr>
@@ -155,8 +155,8 @@
       <tr class="MLS" class="game8"></tr>
       <tr class="MLS" class="game9"></tr>
       <tr class="MLS" class="game10"></tr>
-    </table>
-</div>
+    </div>
+</table>
 
 
 <script type="text/javascript">
@@ -165,7 +165,7 @@
       //hides header and remove table border
       if(__UP_header__ == false){
         var hideHeader, i;
-        hideHeader = document.querySelectorAll("table")
+        hideHeader = document.querySelectorAll("div")
         for(i = 0; i < hideHeader.length; i++){  
           document.querySelectorAll("table")[i].style.borderSpacing = "0px"
           document.querySelectorAll("th")[i].style.display ="none"
