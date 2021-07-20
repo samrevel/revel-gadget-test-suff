@@ -13,15 +13,16 @@
           <EnumValue value="9" display_value="9" />
           <EnumValue value="10" display_value="10" />
         </UserPref>
+
         <UserPref name="showNFL" display_name="Show NFL game scores" datatype="bool" default_value="true" />
         <UserPref name="showNBA" display_name="Show NBA game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLB" display_name="Show MLB game scores" datatype="bool" default_value="true" />
         <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
-        <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
-        <UserPref name="header" display_name="Header of game scores (to hide headers put display: none;)" datatype="style" default_value="" required="true" />
-        <UserPref name="myStylePref" display_name="Style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
 
+        <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
+        <UserPref name="header" display_name="Show or hide league headers (to hide change block to none)" datatype="style" default_value="display: block;" required="false" />
+        <UserPref name="myStylePref" display_name="Style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
 
         <!-- The following preferences should not be modified -->
         <UserPref name="ForeColor" datatype="hidden" />
@@ -66,11 +67,8 @@
   td a img {
     display: none;
   }
-  .gameHeader{
-    __UP_header__;
-  }
   tr:nth-child(1) > th{
-    display:none;
+    __UP_header__
   }
 </style>
 
