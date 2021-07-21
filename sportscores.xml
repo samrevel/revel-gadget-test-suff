@@ -3,7 +3,7 @@
     <ModulePrefs title="Sample Gadget" description="Show sport game scores" author="Sam Kim" background="transparent">
 
         <!-- Option to show a number of games per league -->
-        <UserPref name="numGame" display_name="Number of games showen per league" datatype="enum" default_value="10">
+        <UserPref name="numGame" display_name="Number of games showen per league" datatype="enum" default_value="3">
           <EnumValue value="1" display_value="1" />
           <EnumValue value="2" display_value="2" />
           <EnumValue value="3" display_value="3" />
@@ -56,19 +56,19 @@
     __UP_myStylePref__;
   }
   td:nth-child(5) {
-    __UP_scoreWidth__;
+    __UP_scoreWidth__; /*option to change score width */ 
   }
   a:link {
-    text-decoration: none;
-    __UP_myStylePref__;
-    pointer-events: none;
-    cursor: default;
+    text-decoration: none; /* cant click links */
+    __UP_myStylePref__;    /* links look same as other text */
+    pointer-events: none;  /* cant click links */
+    cursor: default;       /* cant click links */
   }
   .hidden-xs {
-    display: none;
+    display: none; /* cant where game was played */
   }
   td a img {
-    display: none;
+    display: none; /* cant see unless images */
   }
 </style>
 
@@ -167,16 +167,16 @@
   //hides header and remove table border
   if(__UP_header__ == false){
     var hideHeader, i;
-    hideHeader = document.querySelectorAll("table")
+    hideHeader = document.querySelectorAll("table");
     for(i = 0; i < hideHeader.length; i++){  
-      document.querySelectorAll("table")[i].style.borderSpacing = "0px"
-      document.querySelectorAll("th")[i].style.display ="none"
+      document.querySelectorAll("table")[i].style.borderSpacing = "0px";
+      document.querySelectorAll("th")[i].style.display ="none";
     }
   }
 
   // height is later used for changeing height of images, need to be a golble var
-  var height
-  var numGames = __UP_numGame__
+  var height;
+  var numGames = __UP_numGame__;
   
   //links are used to  get game data for each leauge
   var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
