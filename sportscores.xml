@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
     <ModulePrefs title="Sample Gadget" description="Show sport game scores" author="Sam Kim" background="transparent">
+
+        <!-- Option to show a number of games per league -->
         <UserPref name="numGame" display_name="Number of games showen per league" datatype="enum" default_value="10">
           <EnumValue value="1" display_value="1" />
           <EnumValue value="2" display_value="2" />
@@ -14,14 +16,16 @@
           <EnumValue value="10" display_value="10" />
         </UserPref>
 
+        <!-- User option to hide or show diffent leagues and headers -->
         <UserPref name="showNFL" display_name="Show NFL game scores" datatype="bool" default_value="true" />
         <UserPref name="showNBA" display_name="Show NBA game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLB" display_name="Show MLB game scores" datatype="bool" default_value="true" />
-        <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="false" />
+        <UserPref name="showNHL" display_name="Show NHL game scores" datatype="hidden" default_value="false" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
         <UserPref name="header" display_name="Show league headers" datatype="bool" default_value="true" />
 
-        <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 100px;" required="true" />
+        <!-- Styling options -->
+        <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 150px;" required="true" />
         <UserPref name="myStylePref" display_name="Style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
 
         <!-- The following preferences should not be modified -->
@@ -59,8 +63,7 @@
     __UP_myStylePref__;
     pointer-events: none;
     cursor: default;
-      }
-    
+  }
   .hidden-xs {
     display: none;
   }
@@ -76,219 +79,227 @@
 <!-- Preferences can be inlined in your HTML like so -->
 <!--Refresh every 12 hours. 12 sec * 60 * 60 = 43200 sec -->
 <meta http-equiv="refresh" content="43200" />
+
 <h1></h1>
 <div class="my-style">
-    <table id="tableNFL">
-      <!--NFL GAMEs-->
-      <th class="NFL" class="gameHeader"></th>
-      <tr id="NFL" class="NFL" class="game1"></tr>
-      <tr class="NFL" class="game2"></tr>
-      <tr class="NFL" class="game3"></tr>
-      <tr class="NFL" class="game4"></tr>
-      <tr class="NFL" class="game5"></tr>
-      <tr class="NFL" class="game6"></tr>
-      <tr class="NFL" class="game7"></tr>
-      <tr class="NFL" class="game8"></tr>
-      <tr class="NFL" class="game9"></tr>
-      <tr class="NFL" class="game10"></tr>
-      <tr class="NFL"></tr>
-    </table>
 
-    <!--NBA GAMES-->
-    <table id="tableNBA">
-      <th class="NBA" class="gameHeader"></th>
-      <tr id="NBA" class="NBA" class="game1"></tr>
-      <tr class="NBA" class="game2"></tr>
-      <tr class="NBA" class="game3"></tr>
-      <tr class="NBA" class="game4"></tr>
-      <tr class="NBA" class="game5"></tr>
-      <tr class="NBA" class="game6"></tr>
-      <tr class="NBA" class="game7"></tr>
-      <tr class="NBA" class="game8"></tr>
-      <tr class="NBA" class="game9"></tr>
-      <tr class="NBA" class="game10"></tr>
-      <tr class="NBA"></tr>
-    </table>
+  <!--NFL GAMEs-->
+  <table id="tableNFL">
+    <th class="NFL" class="gameHeader"></th>
+    <tr id="NFL" class="NFL" class="game1"></tr>
+    <tr class="NFL" class="game2"></tr>
+    <tr class="NFL" class="game3"></tr>
+    <tr class="NFL" class="game4"></tr>
+    <tr class="NFL" class="game5"></tr>
+    <tr class="NFL" class="game6"></tr>
+    <tr class="NFL" class="game7"></tr>
+    <tr class="NFL" class="game8"></tr>
+    <tr class="NFL" class="game9"></tr>
+    <tr class="NFL" class="game10"></tr>
+    <tr class="NFL"></tr>
+  </table>
 
-    <table id="tableMLB">
-      <!--MLB GAMES-->
-      <th class="MLB" class="gameHeader"></th>
-      <tr id="MLB" class="MLB" class="game1"></tr>
-      <tr class="MLB" class="game2"></tr>
-      <tr class="MLB" class="game3"></tr>
-      <tr class="MLB" class="game4"></tr>
-      <tr class="MLB" class="game5"></tr>
-      <tr class="MLB" class="game6"></tr>
-      <tr class="MLB" class="game7"></tr>
-      <tr class="MLB" class="game8"></tr>
-      <tr class="MLB" class="game9"></tr>
-      <tr class="MLB" class="game10"></tr>
-      <tr class="MLB"></tr>
-    </table>
+  <!--NBA GAMES-->
+  <table id="tableNBA">
+    <th class="NBA" class="gameHeader"></th>
+    <tr id="NBA" class="NBA" class="game1"></tr>
+    <tr class="NBA" class="game2"></tr>
+    <tr class="NBA" class="game3"></tr>
+    <tr class="NBA" class="game4"></tr>
+    <tr class="NBA" class="game5"></tr>
+    <tr class="NBA" class="game6"></tr>
+    <tr class="NBA" class="game7"></tr>
+    <tr class="NBA" class="game8"></tr>
+    <tr class="NBA" class="game9"></tr>
+    <tr class="NBA" class="game10"></tr>
+    <tr class="NBA"></tr>
+  </table>
 
-    <table id="tableNHL">
-      <!--NHL GAMES-->
-      <th class="NHL" class="gameHeader"></th>
-      <tr id="NHL" class="NHL" class="game1"></tr>
-      <tr class="NHL" class="game2"></tr>
-      <tr class="NHL" class="game3"></tr>
-      <tr class="NHL" class="game4"></tr>
-      <tr class="NHL" class="game5"></tr>
-      <tr class="NHL" class="game6"></tr>
-      <tr class="NHL" class="game7"></tr>
-      <tr class="NHL" class="game8"></tr>
-      <tr class="NHL" class="game9"></tr>
-      <tr class="NHL" class="game10"></tr>
-      <tr class="NHL"></tr>
-    </table>
+  <!--MLB GAMES-->
+  <table id="tableMLB">
+    <th class="MLB" class="gameHeader"></th>
+    <tr id="MLB" class="MLB" class="game1"></tr>
+    <tr class="MLB" class="game2"></tr>
+    <tr class="MLB" class="game3"></tr>
+    <tr class="MLB" class="game4"></tr>
+    <tr class="MLB" class="game5"></tr>
+    <tr class="MLB" class="game6"></tr>
+    <tr class="MLB" class="game7"></tr>
+    <tr class="MLB" class="game8"></tr>
+    <tr class="MLB" class="game9"></tr>
+    <tr class="MLB" class="game10"></tr>
+    <tr class="MLB"></tr>
+  </table>
 
-    <table id="tableMLS">
-      <!--MLS GAMES-->
-      <th class="MLS" class="gameHeader"></th>
-      <tr id="MLS" class="MLS" class="game1"></tr>
-      <tr class="MLS" class="game2"></tr>
-      <tr class="MLS" class="game3"></tr>
-      <tr class="MLS" class="game4"></tr>
-      <tr class="MLS" class="game5"></tr>
-      <tr class="MLS" class="game6"></tr>
-      <tr class="MLS" class="game7"></tr>
-      <tr class="MLS" class="game8"></tr>
-      <tr class="MLS" class="game9"></tr>
-      <tr class="MLS" class="game10"></tr>
-    </table>
+  <!--NHL GAMES-->
+  <table id="tableNHL">
+    <th class="NHL" class="gameHeader"></th>
+    <tr id="NHL" class="NHL" class="game1"></tr>
+    <tr class="NHL" class="game2"></tr>
+    <tr class="NHL" class="game3"></tr>
+    <tr class="NHL" class="game4"></tr>
+    <tr class="NHL" class="game5"></tr>
+    <tr class="NHL" class="game6"></tr>
+    <tr class="NHL" class="game7"></tr>
+    <tr class="NHL" class="game8"></tr>
+    <tr class="NHL" class="game9"></tr>
+    <tr class="NHL" class="game10"></tr>
+    <tr class="NHL"></tr>
+  </table>
+
+  <!--MLS GAMES-->
+  <table id="tableMLS">
+    <th class="MLS" class="gameHeader"></th>
+    <tr id="MLS" class="MLS" class="game1"></tr>
+    <tr class="MLS" class="game2"></tr>
+    <tr class="MLS" class="game3"></tr>
+    <tr class="MLS" class="game4"></tr>
+    <tr class="MLS" class="game5"></tr>
+    <tr class="MLS" class="game6"></tr>
+    <tr class="MLS" class="game7"></tr>
+    <tr class="MLS" class="game8"></tr>
+    <tr class="MLS" class="game9"></tr>
+    <tr class="MLS" class="game10"></tr>
+  </table>
+
 </div>
 
 
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
 
-      //hides header and remove table border
-      if(__UP_header__ == false){
-        var hideHeader, i;
-        hideHeader = document.querySelectorAll("table")
-        for(i = 0; i < hideHeader.length; i++){  
-          document.querySelectorAll("table")[i].style.borderSpacing = "0px"
-          document.querySelectorAll("th")[i].style.display ="none"
-        }
-      }
-
-      var height
-      var numGames = __UP_numGame__
-      
-      //links are used to  get game data for each leauge
-      var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
-      var linkNBA = "https://www.thesportsdb.com/league/4387-NBA";
-      var linkMLB = "https://www.thesportsdb.com/league/4424-MLB";
-      var linkNHL = "https://www.thesportsdb.com/league/4380-NHL";
-      var linkMLS =
-        "https://www.thesportsdb.com/league/4346-American-Major-League-Soccer";
-
-
-      //If statments are for hiding or showing differnt leagues  
-      if (__UP_showNFL__ == true) {
-      yes("NFL", linkNFL);
-      } else {document.getElementById("tableNFL").style.visibility = "collapse";}
-
-      if (__UP_showNBA__ == true) {
-      yes("NBA", linkNBA);
-      } else {document.getElementById("tableNBA").style.visibility = "collapse";}
-
-      if (__UP_showMLB__ == true) {
-      yes("MLB", linkMLB);
-      } else {document.getElementById("tableMLB").style.visibility = "collapse";}
-
-      if (__UP_showNHL__ == true) {
-      yes("NHL", linkNHL);
-      } else {document.getElementById("tableNHL").style.visibility = "collapse";}
-
-      if (__UP_showMLS__ == true) {
-      yes("MLS", linkMLS);
-      } else {document.getElementById("tableMLS").style.visibility = "collapse";}
-
-
-      //yes functions is run to get data from website and put into html to display
-      //i dont know how it works but YES it works
-      function yes(gameName, link) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", link, true);
-        xhr.responseType = "document";
-        xhr.onload = function () {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = xhr.responseXML.querySelectorAll(
-              "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
-            );
-            displayGames(response);
-          }
-        };
-        xhr.onerror = function () {
-          console.error(xhr.status, xhr.statusText);
-        };
-
-
-        //game scores ae the last 10 rows, so you have to pop all but last 10
-        //the funtion writes game scores to html table
-        //if statements are for showing less scores
-
-        function displayGames(response) {
-          document.getElementsByClassName(gameName)[0].innerHTML =
-            gameName + " Game Scores";
-
-          document.getElementsByClassName(gameName)[1].innerHTML =
-            response[response.length - 10].innerHTML;
-          
-          //change hieght of img so it fix better  
-          height = document.getElementById(gameName).offsetHeight
-
-            if (numGames == 1){return resizeImg()}
-
-          document.getElementsByClassName(gameName)[2].innerHTML =
-            response[response.length - 9].innerHTML;
-              if (numGames == 2){return resizeImg()}
-
-          document.getElementsByClassName(gameName)[3].innerHTML =
-            response[response.length - 8].innerHTML;
-              if (numGames == 3){return resizeImg()}
-
-          document.getElementsByClassName(gameName)[4].innerHTML =
-            response[response.length - 7].innerHTML;
-              if (numGames == 4){return resizeImg()}
-
-          document.getElementsByClassName(gameName)[5].innerHTML =
-            response[response.length - 6].innerHTML;
-              if (numGames == 5){return resizeImg()}
-
-          document.getElementsByClassName(gameName)[6].innerHTML =
-            response[response.length - 5].innerHTML;
-              if (numGames == 6){return resizeImg()}
-
-          document.getElementsByClassName(gameName)[7].innerHTML =
-            response[response.length - 4].innerHTML;
-              if (numGames == 7){return resizeImg()}
-              
-          document.getElementsByClassName(gameName)[8].innerHTML =
-            response[response.length - 3].innerHTML;
-              if (numGames == 8){return resizeImg()}
-
-          document.getElementsByClassName(gameName)[9].innerHTML =
-            response[response.length - 2].innerHTML;
-              if (numGames == 9){return resizeImg()}
-
-          document.getElementsByClassName(gameName)[10].innerHTML =
-            response[response.length - 1].innerHTML;
-            if (numGames == 10){return resizeImg()}
-        }
-        //if i get rid of this, everythhing braek
-        xhr.send();
-      }
-
-      //resizeImg is for making all the images the same sizes as the text
-      function resizeImg() {
-        var x, i;
-        x = document.getElementsByTagName("IMG");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.width = height - 11 + "px";
-      }
+  //hides header and remove table border
+  if(__UP_header__ == false){
+    var hideHeader, i;
+    hideHeader = document.querySelectorAll("table")
+    for(i = 0; i < hideHeader.length; i++){  
+      document.querySelectorAll("table")[i].style.borderSpacing = "0px"
+      document.querySelectorAll("th")[i].style.display ="none"
     }
+  }
+
+  // height is later used for changeing height of images, need to be a golble var
+  var height
+  var numGames = __UP_numGame__
+  
+  //links are used to  get game data for each leauge
+  var linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
+  var linkNBA = "https://www.thesportsdb.com/league/4387-NBA";
+  var linkMLB = "https://www.thesportsdb.com/league/4424-MLB";
+  var linkNHL = "https://www.thesportsdb.com/league/4380-NHL";
+  var linkMLS =
+    "https://www.thesportsdb.com/league/4346-American-Major-League-Soccer";
+
+
+  //If statments are for hiding or showing differnt leagues  
+  if (__UP_showNFL__ == true) {
+  getData("NFL", linkNFL);
+  } else {document.getElementById("tableNFL").style.visibility = "collapse";}
+
+  if (__UP_showNBA__ == true) {
+  getData("NBA", linkNBA);
+  } else {document.getElementById("tableNBA").style.visibility = "collapse";}
+
+  if (__UP_showMLB__ == true) {
+  getData("MLB", linkMLB);
+  } else {document.getElementById("tableMLB").style.visibility = "collapse";}
+
+  if (__UP_showNHL__ == true) {
+  getData("NHL", linkNHL);
+  } else {document.getElementById("tableNHL").style.visibility = "collapse";}
+
+  if (__UP_showMLS__ == true) {
+  getData("MLS", linkMLS);
+  } else {document.getElementById("tableMLS").style.visibility = "collapse";}
+
+
+  //getData functions is run to get data from website so later it can be displayed
+  //gameName is the name of the league
+  function getData(gameName, link) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", link, true);
+    xhr.responseType = "document";
+
+    xhr.onload = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var response = xhr.responseXML.querySelectorAll(
+          "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
+        );
+        displayGames(response);
+      }
+    };
+    xhr.onerror = function () {
+      console.error(xhr.status, xhr.statusText);
+    };
+
+
+    //game scores ae the last 10 rows, so you have to pop all but last 10
+    //the funtion writes game scores to html table
+
+    function displayGames(response) {
+
+      //puts text into game headers, still runs even if no game headers
+      document.getElementsByClassName(gameName)[0].innerHTML =
+        gameName + " Game Scores";
+
+      document.getElementsByClassName(gameName)[1].innerHTML =
+        response[response.length - 10].innerHTML;
+      
+      //change height of img so it fix better  
+      height = document.getElementById(gameName).offsetHeight
+
+      //all if statements are for showing less scores and running resizeImg()
+        if (numGames == 1){return resizeImg()}
+
+      document.getElementsByClassName(gameName)[2].innerHTML =
+        response[response.length - 9].innerHTML;
+          if (numGames == 2){return resizeImg()}
+
+      document.getElementsByClassName(gameName)[3].innerHTML =
+        response[response.length - 8].innerHTML;
+          if (numGames == 3){return resizeImg()}
+
+      document.getElementsByClassName(gameName)[4].innerHTML =
+        response[response.length - 7].innerHTML;
+          if (numGames == 4){return resizeImg()}
+
+      document.getElementsByClassName(gameName)[5].innerHTML =
+        response[response.length - 6].innerHTML;
+          if (numGames == 5){return resizeImg()}
+
+      document.getElementsByClassName(gameName)[6].innerHTML =
+        response[response.length - 5].innerHTML;
+          if (numGames == 6){return resizeImg()}
+
+      document.getElementsByClassName(gameName)[7].innerHTML =
+        response[response.length - 4].innerHTML;
+          if (numGames == 7){return resizeImg()}
+          
+      document.getElementsByClassName(gameName)[8].innerHTML =
+        response[response.length - 3].innerHTML;
+          if (numGames == 8){return resizeImg()}
+
+      document.getElementsByClassName(gameName)[9].innerHTML =
+        response[response.length - 2].innerHTML;
+          if (numGames == 9){return resizeImg()}
+
+      document.getElementsByClassName(gameName)[10].innerHTML =
+        response[response.length - 1].innerHTML;
+        if (numGames == 10){return resizeImg()}
+    }
+    //if i get rid of this, everythhing breaks
+    xhr.send();
+  }
+
+  //resizeImg is for making all the images the same sizes as the text
+  function resizeImg() {
+    var x, i;
+    x = document.getElementsByTagName("IMG");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.width = height - 11 + "px";
+    }
+  }
+
   // This function is called after the gadget has been initialized.
   function onLoad() {
   }
