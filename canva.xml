@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module> 
-<ModulePrefs title="Canva Gadget" description="Basic gadget for displaying Canva templates" author="RevelDigital - Sam Kim" background="transparent">
+<ModulePrefs title="RevelDigital Canva Gadget" title_url="https://www.canva.com/help/article/embed-designs" description="Displays Canva templates useing a HTML embeded code." author="RevelDigital - Sam Kim" background="transparent">
   <Require feature="reveldigital" />
   <Require feature="jquery" />
   <Require feature="webfont" />
