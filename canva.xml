@@ -47,9 +47,9 @@ a{
 }
 </style>
 
-
+<div id="container">
 __UP_text__
-
+</div>
 
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
