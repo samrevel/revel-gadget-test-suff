@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module> 
-<ModulePrefs title="Iframe Gadget" description="Basic gadget for displaying iframes" author="RevelDigital - Vincent C." background="transparent">
+<ModulePrefs title="Iframe Gadget" description="Basic gadget for displaying iframes" author="RevelDigital - Sam Kim" background="transparent">
   <Require feature="reveldigital" />
   <Require feature="jquery" />
   <Require feature="webfont" />
@@ -41,13 +41,16 @@ div{
     border-radius: 0px !important;
     margin-bottom: 0px !important;
     margin-top: 0px !important;
-
-
+}
+a{
+    display:none;
 }
 </style>
+
 <div id="container">
 __UP_text__
 </div>
+
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
   function load() {
