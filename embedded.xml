@@ -16,6 +16,7 @@
 <style type="text/css">
 body *
 {
+
   line-height: 1.2em; 
   letter-spacing: 0; 
   word-spacing: normal;
@@ -35,6 +36,13 @@ div#container
   height: __UP_rdH__px;
   letter-spacing: __UP_ltrSpacing__px;
   line-height: __UP_lineHeight__;
+}
+div{
+    border-radius: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+
 }
 </style>
 <div id="container">
