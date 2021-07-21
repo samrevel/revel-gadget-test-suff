@@ -38,9 +38,9 @@ div#container
   line-height: __UP_lineHeight__;
 }
 div{
-    border-radius: 0px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    border-radius: 0px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
 
 
 }
