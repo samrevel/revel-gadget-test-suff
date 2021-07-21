@@ -70,17 +70,14 @@
   tr:nth-child(1) > th{
     __UP_header__;
   }
-  div{
-    line-height: 0px;
-  }
 </style>
 
 
 <!-- Preferences can be inlined in your HTML like so -->
 <!--Refresh every 12 hours. 12 sec * 60 * 60 = 43200 sec -->
 <meta http-equiv="refresh" content="43200" />
-
-<table class="my-style">
+<h1></h1>
+<div class="my-style">
     <table id="tableNFL">
       <!--NFL GAMEs-->
       <th class="NFL" class="gameHeader"></th>
@@ -159,7 +156,7 @@
       <tr class="MLS" class="game9"></tr>
       <tr class="MLS" class="game10"></tr>
     </table>
-</table>
+</div>
 
 
 <script type="text/javascript">
@@ -167,14 +164,11 @@
 
       //hides header and remove table border
       if(__UP_header__ == false){
-      var hideHeader, i;
-      hideHeader = document.querySelectorAll("th")
-      for(i = 0; i < hideHeader.length; i++){  
-        document.querySelectorAll("th")[i].style.display ="none"
-        i = i + 1
-        document.querySelectorAll("table")[i].style.borderSpacing = "0"
-        //document.querySelectorAll("table")[i].style.lineHeight = "0"
-        i = i - 1
+        var hideHeader, i;
+        hideHeader = document.querySelectorAll("table")
+        for(i = 0; i < hideHeader.length; i++){  
+          document.querySelectorAll("table")[i].style.borderSpacing = "0px"
+          document.querySelectorAll("th")[i].style.display ="none"
         }
       }
 
@@ -193,23 +187,23 @@
       //If statments are for hiding or showing differnt leagues  
       if (__UP_showNFL__ == true) {
       yes("NFL", linkNFL);
-      } else {document.getElementById("tableNFL").style.display ="none";}
+      } else {document.getElementById("tableNFL").style.visibility = "collapse";}
 
       if (__UP_showNBA__ == true) {
       yes("NBA", linkNBA);
-      } else {document.getElementById("tableNBA").style.display ="none";}
+      } else {document.getElementById("tableNBA").style.visibility = "collapse";}
 
       if (__UP_showMLB__ == true) {
       yes("MLB", linkMLB);
-      } else {document.getElementById("tableMLB").style.display ="none";}
+      } else {document.getElementById("tableMLB").style.visibility = "collapse";}
 
       if (__UP_showNHL__ == true) {
       yes("NHL", linkNHL);
-      } else {document.getElementById("tableNHL").style.display ="none";}
+      } else {document.getElementById("tableNHL").style.visibility = "collapse";}
 
       if (__UP_showMLS__ == true) {
       yes("MLS", linkMLS);
-      } else {document.getElementById("tableMLS").style.display ="none";}
+      } else {document.getElementById("tableMLS").style.visibility = "collapse";}
 
 
       //yes functions is run to get data from website and put into html to display
