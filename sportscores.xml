@@ -20,7 +20,7 @@
         <UserPref name="showNFL" display_name="Show NFL game scores" datatype="bool" default_value="true" />
         <UserPref name="showNBA" display_name="Show NBA game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLB" display_name="Show MLB game scores" datatype="bool" default_value="true" />
-        <UserPref name="showNHL" display_name="Show NHL game scores" datatype="hidden" default_value="false" />
+        <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
         <UserPref name="header" display_name="Show league headers" datatype="bool" default_value="true" />
 
@@ -220,10 +220,10 @@
         var response = xhr.responseXML.querySelectorAll(
           "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
         );
-        if (response.length < 5){
+          if (response.length < 5){
           response = xhr.responseXML.querySelectorAll(
           "#feature > div > div > div.col-sm-9 > table:nth-child(15) > tbody > tr"
-        }
+          );
         displayGames(response);
       }
     };
