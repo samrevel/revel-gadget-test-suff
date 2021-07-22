@@ -221,10 +221,10 @@
           "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
         );
           if (response.length < 5){
-          response = xhr.responseXML.querySelectorAll(
-          "#feature > div > div > div.col-sm-9 > table:nth-child(15) > tbody > tr"
-          }
+            response = xhr.responseXML.querySelectorAll(
+            "#feature > div > div > div.col-sm-9 > table:nth-child(15) > tbody > tr"
           );
+          }
         displayGames(response);
       }
     };
