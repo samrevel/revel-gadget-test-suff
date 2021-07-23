@@ -26,6 +26,7 @@
 
         <!-- Styling options -->
         <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 150px;" required="true" />
+        <UserPref name="teamWidth" display_name="Width of team name (use if team name are on differnt lines)" datatype="style" default_value="width: auto;" required="true" />
         <UserPref name="myStylePref" display_name="Style preferences" datatype="style" default_value="font-family:Verdana;color:rgb(255, 255, 255);font-size:24px;text-align:left;" required="true" />
 
         <!-- The following preferences should not be modified -->
@@ -58,6 +59,10 @@
   td:nth-child(5) {
     __UP_scoreWidth__; /*option to change score width */ 
   }
+  td:nth-child(3) {
+    __UP_teamWidth__; /*option to change team width */
+  }
+
   a:link {
     text-decoration: none; /* cant click links */
     __UP_myStylePref__;    /* links look same as other text */
