@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-    <ModulePrefs title="Sample Gadget" description="Show sport game scores" author="Sam Kim" background="transparent">
+    <ModulePrefs title="RevelDigital Sport Gadget" description="Show sport game scores" author="RevelDigital - Sam Kim" background="transparent">
 
         <!-- Option to show a number of games per league -->
         <UserPref name="numGame" display_name="Number of games showen per league" datatype="enum" default_value="3">
@@ -23,6 +23,9 @@
         <UserPref name="showNHL" display_name="Show NHL game scores" datatype="bool" default_value="true" />
         <UserPref name="showMLS" display_name="Show MLS game scores" datatype="bool" default_value="true" />
         <UserPref name="header" display_name="Show league headers" datatype="bool" default_value="true" />
+        
+        <!-- Refresh interval in min -->
+        <UserPref name="refresh" display_name="Refresh interval in number of hours" datatype="string" default_value="12" />
 
         <!-- Styling options -->
         <UserPref name="scoreWidth" display_name="Width of game scores (use if game scores are on differnt lines)" datatype="style" default_value="width: 150px;" required="true" />
@@ -39,48 +42,46 @@
     <Content type="html">
         <![CDATA[
 <style type="text/css">
-  body *
-  {
+  body *{
     line-height: 1.2em; 
     letter-spacing: 0; 
     word-spacing: normal;
   }
-  body
-  {
+  body{
     background: transparent;
     width: __UP_rdW__px;
     height: __UP_rdH__px;
     overflow: hidden;
   }
-  .my-style
-  {
+  .my-style{
     __UP_myStylePref__;
   }
+
+/* Gadget specific css */
   td:nth-child(5) {
-    __UP_scoreWidth__; /*option to change score width */ 
+    __UP_scoreWidth__;     /* Option to change score width */ 
   }
+
   td:nth-child(3) {
-    __UP_teamWidth__; /*option to change team width */
+    __UP_teamWidth__;      /* Option to change team width */
   }
 
   a:link {
-    text-decoration: none; /* cant click links */
-    __UP_myStylePref__;    /* links look same as other text */
-    pointer-events: none;  /* cant click links */
-    cursor: default;       /* cant click links */
+    text-decoration: none; /* Cant click links */
+    __UP_myStylePref__;    /* Links look same as other text */
+    pointer-events: none;  /* Cant click links */
+    cursor: default;       /* Cant click links */
   }
+
   .hidden-xs {
-    display: none; /* cant where game was played */
+    display: none;         /* Cant where game was played */
   }
+
   td a img {
-    display: none; /* cant see unless images */
+    display: none;         /* Cant see useless images */
   }
 </style>
-
-
 <!-- Preferences can be inlined in your HTML like so -->
-<!--Refresh every 12 hours. 12 sec * 60 * 60 = 43200 sec -->
-<meta http-equiv="refresh" content="43200" />
 
 <div class="my-style">
 
@@ -169,7 +170,7 @@
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
 
-  //hides header and remove table border
+  // Hides header and remove table border if user wants
   if(__UP_header__ == false){
     let hideHeader, i;
     hideHeader = document.querySelectorAll("table");
@@ -178,11 +179,9 @@
       document.querySelectorAll("th")[i].style.display ="none";
     }
   }
-
-  // height is later used for changeing height of images, need to be a golble var
-  //var height;
   
-  //links are used to  get game data for each leauge
+
+  // Links are used to get game data for each leauge
   const linkNFL = "https://www.thesportsdb.com/league/4391-NFL";
   const linkNBA = "https://www.thesportsdb.com/league/4387-NBA";
   const linkMLB = "https://www.thesportsdb.com/league/4424-MLB";
@@ -191,7 +190,7 @@
     "https://www.thesportsdb.com/league/4346-American-Major-League-Soccer";
 
 
-  //If statments are for hiding or showing differnt leagues  
+  // If statments are for hiding or showing differnt leagues  
   if (__UP_showNFL__ == true) {
   getData("NFL", linkNFL);
   } else {document.getElementById("tableNFL").style.visibility = "collapse";}
@@ -213,8 +212,8 @@
   } else {document.getElementById("tableMLS").style.visibility = "collapse";}
 
 
-  //getData functions is run to get data from website so later it can be displayed
-  //gameName is the name of the league
+  // getData functions is run to get data from website so later it can be displayed
+  // gameName is the name of the league
   function getData(gameName, link) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", link, true);
@@ -225,6 +224,8 @@
         let response = xhr.responseXML.querySelectorAll(
           "#feature > div > div > div.col-sm-9 > table:nth-child(16) > tbody > tr"
         );
+          // If league has no upcoming events, game score are located in differnt spot
+          // The if statmnt fillter If league has no upcoming events
           if (response.length < 5){
             response = xhr.responseXML.querySelectorAll(
             "#feature > div > div > div.col-sm-9 > table:nth-child(15) > tbody > tr"
@@ -307,6 +308,18 @@
 
   // This function is called after the gadget has been initialized.
   function onLoad() {
+
+    // refresh interval
+    var refresh = __UP_refresh__ *1        // turn refresh into a number
+    refresh = refresh * 1000 * 60 * 60     // turn refresh into number of hours
+
+    // if refesh is 0 than it will not refresh
+    if(refresh > 0){
+      // funtion to do the refreshing
+      setTimeout(function(){
+        location.reload();
+        },refresh);
+    }
   }
   gadgets.util.registerOnLoadHandler(onLoad);
 </script>
