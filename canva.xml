@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
-<Module> 
-<ModulePrefs title="RevelDigital Canva Gadget" title_url="https://www.canva.com/help/article/embed-designs" description="Displays Canva templates useing a HTML embeded code." author="RevelDigital - Sam Kim" background="transparent">
-  <Require feature="reveldigital" />
-  <Require feature="jquery" />
-  <Require feature="webfont" />
-  
-  <UserPref name="text" display_name="Copy HTML embed code and pasta it in here" datatype="string" default_value="1" />
-  <UserPref name="refresh" display_name="time to refresh" datatype="string" default_value="0" />
-  <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
-  <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />
-  <UserPref name="portrait" display_name="Portrait Mode" default_value="false" datatype="bool" />
-  
-</ModulePrefs>
-<Content type="html">
-<![CDATA[
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="RevelDigital Canva Gadget" title_url="https://www.canva.com/help/article/embed-designs" description="Displays Canva templates useing a HTML embeded code." author="RevelDigital - Sam Kim" background="transparent">
+    <Require feature="reveldigital" />
+    <Require feature="jquery" />
+    <Require feature="webfont" />
+
+    <UserPref name="text" display_name="Copy HTML embed code and pasta it in here" datatype="string" default_value="1" />
+    <UserPref name="refresh" display_name="Refresh interval" datatype="string" default_value="0" />
+    <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
+    <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />
+    <UserPref name="portrait" display_name="Portrait Mode" default_value="false" datatype="bool" />
+
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
 <style type="text/css">
 body *
 {
@@ -69,13 +69,15 @@ __UP_text__
     }
     var refresh = __UP_refresh__ *1
     refresh = refresh * 1000 * 60
-    setTimeout(function(){
-      location.reload();
-  },refresh); // 5000 milliseconds means 5 seconds.
+    if(refresh != 0){
+      setTimeout(function(){
+        location.reload();
+        },refresh);
+    }
   }
   gadgets.util.registerOnLoadHandler(load);
   
 </script>
 ]]>
-</Content>
+  </Content>
 </Module>
