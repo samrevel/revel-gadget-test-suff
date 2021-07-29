@@ -40,10 +40,12 @@ div#container
   letter-spacing: __UP_ltrSpacing__px;
   line-height: __UP_lineHeight__;
 }
+/* Remove styleing from HTML embed code, the code users inputs has some
+   styling in it that is uneeded and looks bad */
 div{
-    border-radius: 0px !important;
-    margin-bottom: 0px !important;
-    margin-top: 0px !important;
+    border-radius: 0px !important; /* remove cruved edges */
+    margin-bottom: 0px !important; /* removed bottom borders */
+    margin-top: 0px !important;    /* removed top borders */
 }
 a{
     display:none;
@@ -51,7 +53,7 @@ a{
 </style>
 
 <div id="container">
-<!-- embeded code form canva -->
+<!-- embeded HTML code form canva -->
 __UP_text__
 </div>
 
