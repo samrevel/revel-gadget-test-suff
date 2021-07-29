@@ -5,7 +5,8 @@
   <Require feature="jquery" />
   <Require feature="webfont" />
   
-  <UserPref name="text" display_name="Copy HTML embed code and pasta it in here" datatype="string" default_value="" />
+  <UserPref name="text" display_name="Copy HTML embed code and pasta it in here" datatype="string" default_value="1" />
+  <UserPref name="refresh" display_name="time to refresh" datatype="string" default_value="0" />
   <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
   <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />
   <UserPref name="portrait" display_name="Portrait Mode" default_value="false" datatype="bool" />
@@ -54,6 +55,7 @@ __UP_text__
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
   function load() {
+
     if(prefs.getBool("portrait"))
     {
       $("body").css("flex-direction", "row");
@@ -65,6 +67,11 @@ __UP_text__
     }else{
       $("body").css("flex-direction", "column");
     }
+    var refresh = __UP_refresh__ *1
+    refresh = refresh * 1000 * 60
+    setTimeout(function(){
+      location.reload();
+  },refresh); // 5000 milliseconds means 5 seconds.
   }
   gadgets.util.registerOnLoadHandler(load);
   
