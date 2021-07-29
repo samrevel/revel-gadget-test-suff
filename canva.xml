@@ -6,7 +6,7 @@
     <Require feature="webfont" />
 
     <UserPref name="text" display_name="Copy HTML embed code and pasta it in here" datatype="string" default_value="1" />
-    <UserPref name="refresh" display_name="Refresh interval" datatype="string" default_value="0" />
+    <UserPref name="refresh" display_name="Refresh interval in number of minutes" datatype="string" default_value="" />
     <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
     <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />
     <UserPref name="portrait" display_name="Portrait Mode" default_value="false" datatype="bool" />
