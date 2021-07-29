@@ -4,9 +4,11 @@
     <Require feature="reveldigital" />
     <Require feature="jquery" />
     <Require feature="webfont" />
-
-    <UserPref name="text" display_name="Copy HTML embed code and pasta it in here" datatype="string" default_value="" />
+    <!-- HTML that is embeded -->
+    <UserPref name="text" display_name="Copy HTML embed code and pasta it in here" datatype="string" default_value="1" />
+    <!-- Refresh interval in min -->
     <UserPref name="refresh" display_name="Refresh interval in number of minutes" datatype="string" default_value="0" />
+
     <UserPref name="rdW" display_name="Width" required="true" default_value="280" datatype="hidden" />
     <UserPref name="rdH" display_name="Height" required="true" default_value="190" datatype="hidden" />
     <UserPref name="portrait" display_name="Portrait Mode" default_value="false" datatype="bool" />
@@ -49,13 +51,14 @@ a{
 </style>
 
 <div id="container">
+<!-- embeded code form canva -->
 __UP_text__
 </div>
 
 <script type="text/javascript">
   var prefs = new gadgets.Prefs();
   function load() {
-
+    // rotation options
     if(prefs.getBool("portrait"))
     {
       $("body").css("flex-direction", "row");
@@ -67,9 +70,15 @@ __UP_text__
     }else{
       $("body").css("flex-direction", "column");
     }
-    var refresh = __UP_refresh__ *1
-    refresh = refresh * 1000 * 60
+
+
+    // refresh interval
+    var refresh = __UP_refresh__ *1   // turn refresh into a number
+    refresh = refresh * 1000 * 60     // turn refresh into number of mins
+
+    // if refesh is 0 than it will not refresh
     if(refresh > 0){
+      // funtion to do the refreshing
       setTimeout(function(){
         location.reload();
         },refresh);
